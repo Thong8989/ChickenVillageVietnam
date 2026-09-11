@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-vi=" Làng Gà Darahoa " data-en="Discover Darahoa Chicken Village - Elephant Mountain's Beauty"> Làng Gà Darahoa - Vẻ Đẹp Của 1 Buôn Làng Dưới Chân Núi Voi</title>
+    <title data-vi="Khám Phá Làng Gà Darahoa - Vẻ Đẹp Dưới Chân Núi Voi" data-en="Discover Darahoa Chicken Village - Elephant Mountain's Beauty">Khám Phá Làng Gà Darahoa - Vẻ Đẹp Dưới Chân Núi Voi</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,23 +24,23 @@
                 <a href="#gioi-thieu" class="hover:text-amber-600 transition" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
                 <a href="#truyen-thuyet" class="hover:text-amber-600 transition" data-vi="Truyền thuyết" data-en="Legend">Truyền thuyết</a>
                 <a href="#trai-nghiem" class="hover:text-amber-600 transition" data-vi="Trải nghiệm" data-en="Experiences">Trải nghiệm</a>
+                <a href="#thu-vien" class="hover:text-amber-600 transition text-amber-600 font-semibold" data-vi="Thư viện" data-en="Library">Thư viện</a>
                 <a href="#lien-he" class="hover:text-amber-600 transition" data-vi="Hướng dẫn đường đi" data-en="Directions">Hướng dẫn đường đi</a>
             </nav>
 
             <div class="flex items-center gap-4">
-                <!-- Nút đổi ngôn ngữ (Language Switcher) -->
                 <button id="langToggle" onclick="toggleLanguage()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-3 py-1.5 rounded-full text-xs transition flex items-center gap-1 border border-slate-200">
                     🌐 <span id="langText">EN</span>
                 </button>
 
-                <a href="#trai-nghiem" class="hidden sm:inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium px-5 py-2.5 rounded-full shadow-lg shadow-amber-600/20 transition-all duration-300 transform hover:-translate-y-0.5" data-vi="Khám phá ngay" data-en="Explore Now">
-                    Khám phá ngay
+                <a href="#thu-vien" class="hidden sm:inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium px-5 py-2.5 rounded-full shadow-lg shadow-amber-600/20 transition-all duration-300 transform hover:-translate-y-0.5" data-vi="Xem Thư Viện" data-en="View Library">
+                    Xem Thư Viện
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section với ảnh banner lửa trại & tượng gà -->
+    <!-- Hero Section -->
     <section class="relative min-h-[90vh] flex items-center justify-center bg-cover bg-center pt-20" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.75)), url('images/banner.jpg');">
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
             <span class="inline-block py-1 px-4 rounded-full bg-white/20 backdrop-blur-md text-sm font-medium mb-6 border border-white/30 animate-pulse" data-vi="⛰️ Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng" data-en="⛰️ At the foot of majestic Elephant Mountain, Duc Trong, Lam Dong">
@@ -56,8 +56,8 @@
                 <a href="#truyen-thuyet" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl transition-all duration-300" data-vi="Đọc truyền thuyết" data-en="Read Legend">
                     Đọc truyền thuyết
                 </a>
-                <a href="#trai-nghiem" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-4 rounded-2xl transition-all duration-300" data-vi="Điểm nổi bật" data-en="Highlights">
-                    Điểm nổi bật
+                <a href="#thu-vien" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-4 rounded-2xl transition-all duration-300" data-vi="Xem Thư Viện Video" data-en="Watch Videos">
+                    Xem Thư Viện Video
                 </a>
             </div>
         </div>
@@ -92,48 +92,57 @@
         </div>
     </section>
 
-    <!-- Trải Nghiệm / Hình Ảnh -->
-    <section id="trai-nghiem" class="py-20 bg-slate-100 px-4 sm:px-6 lg:px-8">
+    <!-- MỤC THƯ VIỆN MỚI (VIDEO YOUTUBE & HÌNH ẢNH) -->
+    <section id="thu-vien" class="py-20 bg-slate-100 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <h2 class="text-sm font-bold tracking-widest text-amber-600 uppercase mb-2" data-vi="Trải nghiệm" data-en="Experiences">Trải nghiệm</h2>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-slate-900" data-vi="Góc nhìn tại Làng Gà" data-en="Views Around Darahoa">Góc nhìn tại Làng Gà</h3>
-                </div>
-                <p class="text-slate-600 max-w-md mt-2 md:mt-0 font-light" data-vi="Không gian mộc mạc, bình yên nằm sát dưới chân núi Voi." data-en="A rustic, peaceful atmosphere nestled right at the foot of Elephant Mountain.">Không gian mộc mạc, bình yên nằm sát dưới chân núi Voi.</p>
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-amber-600 uppercase mb-2" data-vi="Thư Viện Đa Phương Tiện" data-en="Media Library">Thư Viện Đa Phương Tiện</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900" data-vi="Không gian Làng Gà qua Video & Ảnh" data-en="Darahoa Through Video & Photos">Không gian Làng Gà qua Video & Ảnh</h3>
             </div>
 
+            <!-- Khung Nhúng Video YouTube -->
+            <div class="bg-white p-4 sm:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
+                <div class="max-w-3xl mx-auto text-center mb-6">
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2" data-vi="Khám phá Làng Gà Darahoa trên YouTube" data-en="Explore Darahoa Village on YouTube">Khám phá Làng Gà Darahoa trên YouTube</h4>
+                    <p class="text-slate-600 text-sm font-light" data-vi="Video thực tế ghi lại cảnh sắc và đời sống văn hóa tại làng." data-en="Actual footage capturing the landscape and cultural life of the village.">Video thực tế ghi lại cảnh sắc và đời sống văn hóa tại làng.</p>
+                </div>
+                
+                <!-- Khung Video tỉ lệ 16:9 chuẩn responsive -->
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-slate-900">
+                    <!-- BẠN THAY MÃ EMBED YOUTUBE VÀO ĐÂY (Phần src="...") -->
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Lưới hình ảnh thư viện bổ sung -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/place1.jpg" alt="Tượng Gà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-semibold px-3 py-1.5 rounded-full" data-vi="Biểu tượng" data-en="Iconic">Biểu tượng</span>
+                        <img src="images/place1.jpg" alt="Làng Gà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-xl font-bold text-slate-900 mb-2" data-vi="Khu Vực Trung Tâm Làng" data-en="Village Center">Khu Vực Trung Tâm Làng</h4>
-                        <p class="text-slate-600 text-sm font-light mb-4" data-vi="Nơi đặt bức tượng chú gà trống đặc trưng để check-in và lắng nghe thuyết minh." data-en="Where the signature rooster statue is located for photo ops and storytelling.">Nơi đặt bức tượng chú gà trống đặc trưng để check-in và lắng nghe thuyết minh.</p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Tượng Gà Khổng Lồ" data-en="Giant Chicken Statue">Tượng Gà Khổng Lồ</h4>
+                        <p class="text-slate-600 text-xs font-light" data-vi="Biểu tượng tự hào của đồng bào K'Ho" data-en="Proud symbol of the K'Ho people">Biểu tượng tự hào của đồng bào K'Ho</p>
                     </div>
                 </div>
 
                 <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/place2.jpg" alt="Đường làng" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-semibold px-3 py-1.5 rounded-full" data-vi="Thiên nhiên" data-en="Nature">Thiên nhiên</span>
+                        <img src="images/place2.jpg" alt="Làng Gà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-xl font-bold text-slate-900 mb-2" data-vi="Cung Đường Xanh Mát" data-en="Green Pathways">Cung Đường Xanh Mát</h4>
-                        <p class="text-slate-600 text-sm font-light mb-4" data-vi="Những lối đi ngập tràn cây xanh, rẫy cà phê và không khí trong lành đặc trưng vùng cao." data-en="Paths filled with greenery, coffee plantations, and fresh highland air.">Những lối đi ngập tràn cây xanh, rẫy cà phê và không khí trong lành đặc trưng vùng cao.</p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Đời Sống Bản Địa" data-en="Local Lifestyle">Đời Sống Bản Địa</h4>
+                        <p class="text-slate-600 text-xs font-light" data-vi="Nhà cửa và nếp sống mộc mạc" data-en="Rustic houses and lifestyle">Nhà cửa và nếp sống mộc mạc</p>
                     </div>
                 </div>
 
                 <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/place3.jpg" alt="Núi Voi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-slate-900 text-xs font-semibold px-3 py-1.5 rounded-full" data-vi="Khám phá" data-en="Adventure">Khám phá</span>
+                        <img src="images/place3.jpg" alt="Làng Gà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-xl font-bold text-slate-900 mb-2" data-vi="Chân Núi Voi Hùng Vĩ" data-en="Elephant Mountain Foothills">Chân Núi Voi Hùng Vĩ</h4>
-                        <p class="text-slate-600 text-sm font-light mb-4" data-vi="Điểm đến lý tưởng cho các hoạt động trekking, cắm trại và khám phá hệ sinh thái rừng." data-en="An ideal spot for trekking, camping, and exploring the forest ecosystem.">Điểm đến lý tưởng cho các hoạt động trekking, cắm trại và khám phá hệ sinh thái rừng.</p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Cảnh Quan Thiên Nhiên" data-en="Natural Scenery">Cảnh Quan Thiên Nhiên</h4>
+                        <p class="text-slate-600 text-xs font-light" data-vi="Không gian xanh mát dưới chân núi Voi" data-en="Green scenery at the foot of Elephant Mountain">Không gian xanh mát dưới chân núi Voi</p>
                     </div>
                 </div>
             </div>
@@ -160,7 +169,7 @@
         </div>
     </footer>
 
-    <!-- Script xử lý đổi ngôn ngữ Tiếng Việt / Tiếng Anh -->
+    <!-- Script xử lý đổi ngôn ngữ -->
     <script>
         let currentLang = 'vi';
         function toggleLanguage() {
