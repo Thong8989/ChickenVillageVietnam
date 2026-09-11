@@ -19,6 +19,20 @@
         .logo-container:hover .animate-spin-slow {
             animation-play-state: paused;
         }
+        /* Hiệu ứng trượt từ trái sang phải cho khối ảnh */
+        @keyframes slideFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .slide-left-item {
+            animation: slideFromLeft 0.8s ease-out forwards;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
@@ -107,7 +121,7 @@
         </div>
     </section>
 
-    <!-- Mục Thư Viện (Video YouTube & Lưới ảnh đầy đủ hình ảnh thực tế) -->
+    <!-- Mục Thư Viện (Video YouTube & Lưới ảnh xuất hiện trượt từ trái sang phải) -->
     <section id="thu-vien" class="py-20 bg-slate-100 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -126,11 +140,11 @@
                 </div>
             </div>
 
-            <!-- Lưới hình ảnh thư viện -->
+            <!-- Lưới hình ảnh thư viện (Hiệu ứng trượt từ trái sang phải) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <!-- 1. Tượng Gà Khổng Lồ (tuongga.jpg) -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
+                <div class="slide-left-item group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col" style="animation-delay: 0.1s;">
                     <div class="relative overflow-hidden aspect-[4/3]">
                         <img src="image/tuongga.jpg" alt="Tượng Gà Khổng Lồ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -141,7 +155,7 @@
                 </div>
 
                 <!-- 2. Đời Sống Bản Địa (doisongbandia.jpg) -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
+                <div class="slide-left-item group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col" style="animation-delay: 0.2s;">
                     <div class="relative overflow-hidden aspect-[4/3]">
                         <img src="image/doisongbandia.jpg" alt="Đời Sống Bản Địa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -152,7 +166,7 @@
                 </div>
 
                 <!-- 3. Cảnh Quan Thiên Nhiên (canhquanthiennhien.jpg) -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
+                <div class="slide-left-item group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col" style="animation-delay: 0.3s;">
                     <div class="relative overflow-hidden aspect-[4/3]">
                         <img src="image/canhquanthiennhien.jpg" alt="Cảnh Quan Thiên Nhiên" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -163,7 +177,7 @@
                 </div>
 
                 <!-- 4. Nghề Dệt Thổ Cẩm Truyền Thống (detthocam.jpg) -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
+                <div class="slide-left-item group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col" style="animation-delay: 0.4s;">
                     <div class="relative overflow-hidden aspect-[4/3]">
                         <img src="image/detthocam.jpg" alt="Nghề Dệt Thổ Cẩm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -174,7 +188,7 @@
                 </div>
 
                 <!-- 5. Hoa Văn Thổ Cẩm K'Ho (thocam.jpg) -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
+                <div class="slide-left-item group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col" style="animation-delay: 0.5s;">
                     <div class="relative overflow-hidden aspect-[4/3]">
                         <img src="image/thocam.jpg" alt="Hoa Văn Thổ Cẩm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -185,7 +199,7 @@
                 </div>
 
                 <!-- 6. Sản Phẩm Lưu Niệm Thổ Cẩm (quanaothocam.jpg) -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
+                <div class="slide-left-item group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col" style="animation-delay: 0.6s;">
                     <div class="relative overflow-hidden aspect-[4/3]">
                         <img src="image/quanaothocam.jpg" alt="Sản Phẩm Thổ Cẩm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
@@ -196,7 +210,7 @@
                 </div>
 
                 <!-- 7. Trải Nghiệm Trang Phục (trangphuc.jpg) -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col md:col-span-3 max-w-xl mx-auto w-full">
+                <div class="slide-left-item group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col md:col-span-3 max-w-xl mx-auto w-full" style="animation-delay: 0.7s;">
                     <div class="relative overflow-hidden aspect-[16/9]">
                         <img src="image/trangphuc.jpg" alt="Trải nghiệm trang phục" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
