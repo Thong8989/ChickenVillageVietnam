@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-vi="Gà Quay Đại Ngàn - Thơm Ngon Trọn Vị" data-en="Mountain Roasted Chicken - Delicious Taste">Gà Quay Đại Ngàn - Thơm Ngon Trọn Vị</title>
+    <title data-vi="Khám Phá Làng Gà Darahoa - Vẻ Đẹp Dưới Chân Núi Voi" data-en="Discover Darahoa Chicken Village - Elephant Mountain's Beauty">Khám Phá Làng Gà Darahoa - Vẻ Đẹp Dưới Chân Núi Voi</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        /* Hiệu ứng xoay 360 độ liên tục cho logo con gà */
+        /* Hiệu ứng xoay 360 độ cho logo con gà du lịch */
         @keyframes spin360 {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
         .animate-spin-slow {
-            animation: spin360 8s linear infinite;
+            animation: spin360 10s linear infinite;
         }
-        /* Hiệu ứng dừng lại khi rê chuột vào logo nếu muốn */
         .logo-container:hover .animate-spin-slow {
             animation-play-state: paused;
         }
@@ -25,25 +24,25 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
 
-    <!-- Header / Navbar với Logo Gà Quay Xoay 360 Độ -->
+    <!-- Header / Navbar -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Logo Gà Quay Xoay 360 Độ -->
+            <!-- Logo Làng Gà Darahoa với Icon Gà Xoay 360 Độ -->
             <a href="#" class="logo-container flex items-center gap-3 group">
                 <div class="w-12 h-12 rounded-2xl bg-amber-100 border border-amber-200 flex items-center justify-center shadow-inner overflow-hidden relative">
-                    <!-- Icon con gà quay xoay tròn -->
-                    <span class="text-2xl animate-spin-slow inline-block drop-shadow-md">🍗</span>
+                    <span class="text-2xl animate-spin-slow inline-block drop-shadow-md">🐓</span>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-lg font-bold tracking-tight text-amber-700 leading-tight" data-vi="Gà Quay Đại Ngàn" data-en="Mountain Roast Chicken">Gà Quay Đại Ngàn</span>
-                    <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold" data-vi="Xoay 360° Thơm Ngon" data-en="360° Delicious">Xoay 360° Thơm Ngon</span>
+                    <span class="text-lg font-bold tracking-tight text-amber-700 leading-tight" data-vi="Làng Gà Darahoa" data-en="Darahoa Village">Làng Gà Darahoa</span>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold" data-vi="Du Lịch Văn Hóa K'Ho" data-en="K'Ho Cultural Tourism">Du Lịch Văn Hóa K'Ho</span>
                 </div>
             </a>
             
             <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
                 <a href="#gioi-thieu" class="hover:text-amber-600 transition" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
-                <a href="#truyen-thuyet" class="hover:text-amber-600 transition" data-vi="Hương vị" data-en="Flavor">Hương vị</a>
+                <a href="#truyen-thuyet" class="hover:text-amber-600 transition" data-vi="Truyền thuyết" data-en="Legend">Truyền thuyết</a>
+                <a href="#trai-nghiem" class="hover:text-amber-600 transition" data-vi="Trải nghiệm" data-en="Experiences">Trải nghiệm</a>
                 <a href="#thu-vien" class="hover:text-amber-600 transition" data-vi="Thư viện" data-en="Library">Thư viện</a>
                 <a href="#lien-he" class="hover:text-amber-600 transition" data-vi="Bản đồ & Liên hệ" data-en="Map & Contact">Bản đồ & Liên hệ</a>
             </nav>
@@ -53,8 +52,8 @@
                     🌐 <span id="langText">EN</span>
                 </button>
 
-                <a href="#lien-he" class="hidden sm:inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium px-5 py-2.5 rounded-full shadow-lg shadow-amber-600/20 transition-all duration-300 transform hover:-translate-y-0.5" data-vi="Đặt món ngay" data-en="Order Now">
-                    Đặt món ngay
+                <a href="#lien-he" class="hidden sm:inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium px-5 py-2.5 rounded-full shadow-lg shadow-amber-600/20 transition-all duration-300 transform hover:-translate-y-0.5" data-vi="Liên hệ ngay" data-en="Contact Us">
+                    Liên hệ ngay
                 </a>
             </div>
         </div>
@@ -63,39 +62,68 @@
     <!-- Hero Section -->
     <section class="relative min-h-[90vh] flex items-center justify-center bg-cover bg-center pt-20" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.75)), url('images/banner.jpg');">
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-            <span class="inline-block py-1 px-4 rounded-full bg-white/20 backdrop-blur-md text-sm font-medium mb-6 border border-white/30 animate-pulse" data-vi="🔥 Gà quay vàng giòn trên than hồng đại ngàn" data-en="🔥 Crispy roasted chicken on mountain charcoal">
-                🔥 Gà quay vàng giòn trên than hồng đại ngàn
+            <span class="inline-block py-1 px-4 rounded-full bg-white/20 backdrop-blur-md text-sm font-medium mb-6 border border-white/30 animate-pulse" data-vi="⛰️ Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng" data-en="⛰️ At the foot of majestic Elephant Mountain, Duc Trong, Lam Dong">
+                ⛰️ Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng
             </span>
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-                <span data-vi="Đặc Sản" data-en="Specialty">Đặc Sản</span> <span class="text-amber-400" data-vi="Gà Quay 360 Độ" data-en="360° Roast Chicken">Gà Quay 360 Độ</span>
+                <span data-vi="Khám Phá" data-en="Discover">Khám Phá</span> <span class="text-amber-400" data-vi="Làng Gà Darahoa" data-en="Darahoa Chicken Village">Làng Gà Darahoa</span>
             </h1>
-            <p class="text-lg sm:text-xl text-slate-200 mb-10 max-w-2xl mx-auto font-light" data-vi="Thịt gà ta thả vườn săn chắc, tẩm ướp gia vị núi rừng đậm đà, quay đều trên lửa hồng thơm ngon khó cưỡng." data-en="Free-range chicken with rich mountain spices, evenly roasted over glowing embers.">
-                Thịt gà ta thả vườn săn chắc, tẩm ướp gia vị núi rừng đậm đà, quay đều trên lửa hồng thơm ngon khó cưỡng.
+            <p class="text-lg sm:text-xl text-slate-200 mb-10 max-w-2xl mx-auto font-light" data-vi="Nơi lưu giữ bức tượng gà 9 cựa khổng lồ, đậm đà bản sắc văn hóa đại ngàn Tây Nguyên của đồng bào K'Ho." data-en="Home to the giant 9-spurred chicken statue, deeply infused with the cultural identity of the K'Ho ethnic minority in the Central Highlands.">
+                Nơi lưu giữ bức tượng gà 9 cựa khổng lồ, đậm đà bản sắc văn hóa đại ngàn Tây Nguyên của đồng bào K'Ho.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#lien-he" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl transition-all duration-300" data-vi="Chỉ Đường Đến Quán" data-en="Get Directions">
-                    Chỉ Đường Đến Quán
+                <a href="#truyen-thuyet" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl transition-all duration-300" data-vi="Đọc truyền thuyết" data-en="Read Legend">
+                    Đọc truyền thuyết
                 </a>
-                <a href="#thu-vien" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-4 rounded-2xl transition-all duration-300" data-vi="Xem Hình Ảnh" data-en="View Gallery">
-                    Xem Hình Ảnh
+                <a href="#thu-vien" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-4 rounded-2xl transition-all duration-300" data-vi="Xem Thư Viện" data-en="View Library">
+                    Xem Thư Viện
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Mục Thư Viện -->
+    <!-- Giới Thiệu & Truyền Thuyết -->
+    <section id="truyen-thuyet" class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-sm font-bold tracking-widest text-amber-600 uppercase mb-3" data-vi="Câu chuyện sử thi" data-en="Epic Story">Câu chuyện sử thi</h2>
+            <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6" data-vi="Truyền thuyết về chú Gà 9 cựa" data-en="The Legend of the 9-Spurred Chicken">Truyền thuyết về chú Gà 9 cựa</h3>
+            <p class="text-lg text-slate-600 leading-relaxed font-light max-w-3xl mx-auto" data-vi="Cái tên làng Gà gắn liền với câu chuyện tình yêu cảm động giữa nàng H'Bia và chàng K'Tien. Vì những thách cưới ngặt nghèo (trong đó có gà 9 cựa), đôi trẻ đã kiệt sức và hóa thân vào đại ngàn. Bức tượng gà trống 9 cựa cao lớn sừng sững giữa làng được dựng lên như một biểu tượng của sự thủy chung và khát vọng tự do." data-en="The village's name is tied to a touching love story between H'Bia and K'Tien. Due to strict marriage demands (including a 9-spurred chicken), the young couple exhausted themselves and merged into the mountains. The towering statue of the 9-spurred rooster stands as a symbol of loyalty and freedom.">
+                Cái tên làng Gà gắn liền với câu chuyện tình yêu cảm động giữa nàng H'Bia và chàng K'Tien. Vì những thách cưới ngặt nghèo (trong đó có gà 9 cựa), đôi trẻ đã kiệt sức và hóa thân vào đại ngàn. Bức tượng gà trống 9 cựa cao lớn sừng sững giữa làng được dựng lên như một biểu tượng của sự thủy chung và khát vọng tự do.
+            </p>
+        </div>
+
+        <div id="trai-nghiem" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                <div class="text-3xl mb-4">🗿</div>
+                <h4 class="text-xl font-bold text-slate-900 mb-2" data-vi="Tượng Gà 9 Cựa" data-en="9-Spurred Chicken Statue">Tượng Gà 9 Cựa</h4>
+                <p class="text-slate-600 text-sm font-light leading-relaxed" data-vi="Công trình biểu tượng cao 3.2m nặng 8 tấn được thiết kế từ năm 1978, ghi dấu ấn sâu đậm trong lòng du khách." data-en="An iconic 3.2m tall, 8-ton monument built in 1978, leaving a deep impression on every visitor.">Công trình biểu tượng cao 3.2m nặng 8 tấn được thiết kế từ năm 1978, ghi dấu ấn sâu đậm trong lòng du khách.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                <div class="text-3xl mb-4">🧵</div>
+                <h4 class="text-xl font-bold text-slate-900 mb-2" data-vi="Dệt Thổ Cẩm" data-en="Brocade Weaving">Dệt Thổ Cẩm</h4>
+                <p class="text-slate-600 text-sm font-light leading-relaxed" data-vi="Trải nghiệm quan sát những khung dệt thủ công truyền thống và sự khéo léo của các thiếu nữ đồng bào K'Ho." data-en="Experience traditional manual looms and witness the exquisite craftsmanship of K'Ho women.">Trải nghiệm quan sát những khung dệt thủ công truyền thống và sự khéo léo của các thiếu nữ đồng bào K'Ho.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                <div class="text-3xl mb-4">🔥</div>
+                <h4 class="text-xl font-bold text-slate-900 mb-2" data-vi="Văn Hóa Cồng Chiêng" data-en="Gong Culture">Văn Hóa Cồng Chiêng</h4>
+                <p class="text-slate-600 text-sm font-light leading-relaxed" data-vi="Hòa mình vào không gian sinh hoạt cộng đồng, thưởng thức hương vị rượu cần nồng ấm." data-en="Immerse yourself in community gatherings and enjoy traditional local wine.">Hòa mình vào không gian sinh hoạt cộng đồng, thưởng thức hương vị rượu cần nồng ấm.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mục Thư Viện (Video YouTube & Ảnh) -->
     <section id="thu-vien" class="py-20 bg-slate-100 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-sm font-bold tracking-widest text-amber-600 uppercase mb-2" data-vi="Thư Viện Món Ăn" data-en="Food Gallery">Thư Viện Món Ăn</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900" data-vi="Hương vị hấp dẫn từng góc nhìn" data-en="Appetizing flavors from every angle">Hương vị hấp dẫn từng góc nhìn</h3>
+                <h2 class="text-sm font-bold tracking-widest text-amber-600 uppercase mb-2" data-vi="Thư Viện Đa Phương Tiện" data-en="Media Library">Thư Viện Đa Phương Tiện</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900" data-vi="Không gian Làng Gà qua Video & Ảnh" data-en="Darahoa Through Video & Photos">Không gian Làng Gà qua Video & Ảnh</h3>
             </div>
 
             <!-- Khung Nhúng Video YouTube -->
             <div class="bg-white p-4 sm:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
                 <div class="max-w-3xl mx-auto text-center mb-6">
-                    <h4 class="text-2xl font-bold text-slate-900 mb-2" data-vi="Quá trình quay gà thơm ngon" data-en="The delicious roasting process">Quá trình quay gà thơm ngon</h4>
-                    <p class="text-slate-600 text-sm font-light" data-vi="Video thực tế quy trình chế biến món ăn." data-en="Actual footage of the cooking process.">Video thực tế quy trình chế biến món ăn.</p>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2" data-vi="Khám phá Làng Gà Darahoa trên YouTube" data-en="Explore Darahoa Village on YouTube">Khám phá Làng Gà Darahoa trên YouTube</h4>
+                    <p class="text-slate-600 text-sm font-light" data-vi="Video thực tế ghi lại cảnh sắc và đời sống văn hóa tại làng." data-en="Actual footage capturing the landscape and cultural life of the village.">Video thực tế ghi lại cảnh sắc và đời sống văn hóa tại làng.</p>
                 </div>
                 <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-slate-900">
                     <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/7Vf5C9ixskU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -106,52 +134,53 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/place1.jpg" alt="Gà quay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/place1.jpg" alt="Làng Gà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Gà Quay Vàng Óng" data-en="Golden Roasted Chicken">Gà Quay Vàng Óng</h4>
-                        <p class="text-slate-600 text-xs font-light" data-vi="Lớp da giòn rụm, thịt mềm mọng nước" data-en="Crispy skin, juicy meat">Lớp da giòn rụm, thịt mềm mọng nước</p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Tượng Gà Khổng Lồ" data-en="Giant Chicken Statue">Tượng Gà Khổng Lồ</h4>
+                        <p class="text-slate-600 text-xs font-light" data-vi="Biểu tượng tự hào của đồng bào K'Ho" data-en="Proud symbol of the K'Ho people">Biểu tượng tự hào của đồng bào K'Ho</p>
                     </div>
                 </div>
 
                 <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/place2.jpg" alt="Không gian" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/place2.jpg" alt="Làng Gà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Không Gian Ấm Cúng" data-en="Cozy Space">Không Gian Ấm Cúng</h4>
-                        <p class="text-slate-600 text-xs font-light" data-vi="Phục vụ thực khách gần xa" data-en="Serving all guests">Phục vụ thực khách gần xa</p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Đời Sống Bản Địa" data-en="Local Lifestyle">Đời Sống Bản Địa</h4>
+                        <p class="text-slate-600 text-xs font-light" data-vi="Nhà cửa và nếp sống mộc mạc" data-en="Rustic houses and lifestyle">Nhà cửa và nếp sống mộc mạc</p>
                     </div>
                 </div>
 
                 <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/place3.jpg" alt="Đặc sản" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/place3.jpg" alt="Làng Gà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Gia Vị Núi Rừng" data-en="Mountain Spices">Gia Vị Núi Rừng</h4>
-                        <p class="text-slate-600 text-xs font-light" data-vi="Hương vị độc quyền đặc trưng" data-en="Unique signature flavor">Hương vị độc quyền đặc trưng</p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Cảnh Quan Thiên Nhiên" data-en="Natural Scenery">Cảnh Quan Thiên Nhiên</h4>
+                        <p class="text-slate-600 text-xs font-light" data-vi="Không gian xanh mát dưới chân núi Voi" data-en="Green scenery at the foot of Elephant Mountain">Không gian xanh mát dưới chân núi Voi</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER TÍCH HỢP FACEBOOK, MESSENGER, BẢN ĐỒ & ĐIỀU HƯỚNG ĐƯỜNG ĐI -->
     <footer id="lien-he" class="bg-slate-900 text-slate-300 pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
             
-            <!-- Cột 1: Thông tin & Liên hệ -->
+            <!-- Cột 1: Thông tin địa điểm & nút liên hệ mạng xã hội -->
             <div>
                 <h3 class="text-white font-bold text-xl mb-4 flex items-center gap-2">
-                    <span>🍗</span> <span data-vi="Gà Quay Đại Ngàn" data-en="Mountain Roast Chicken">Gà Quay Đại Ngàn</span>
+                    <span>🐓</span> <span data-vi="Khu Du Lịch Làng Gà Darahoa" data-en="Darahoa Chicken Village">Khu Du Lịch Làng Gà Darahoa</span>
                 </h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4" data-vi="📍 Địa chỉ: Xã Hiệp Thạnh, huyện Đức Trọng, tỉnh Lâm Đồng." data-en="📍 Address: Hiep Thanh Commune, Duc Trong District, Lam Dong Province.">
-                    📍 Địa chỉ: Xã Hiệp Thạnh, huyện Đức Trọng, tỉnh Lâm Đồng.
+                <p class="text-slate-400 text-sm leading-relaxed mb-4" data-vi="📍 Địa chỉ: Xã Hiệp Thạnh, huyện Đức Trọng, tỉnh Lâm Đồng (Dưới chân núi Voi hùng vĩ)." data-en="📍 Address: Hiep Thanh Commune, Duc Trong District, Lam Dong Province.">
+                    📍 Địa chỉ: Xã Hiệp Thạnh, huyện Đức Trọng, tỉnh Lâm Đồng (Dưới chân núi Voi hùng vĩ).
                 </p>
                 <p class="text-slate-400 text-sm mb-2">📞 Điện thoại: 0900 588 877</p>
-                <p class="text-slate-400 text-sm mb-4">📧 Email: info@gaquaydaingan.com.vn</p>
+                <p class="text-slate-400 text-sm mb-4">📧 Email: info@langgadarahoa.com.vn</p>
                 
+                <!-- Nút liên kết Facebook & Nhắn tin Messenger -->
                 <div class="flex flex-wrap items-center gap-3">
                     <a href="https://www.facebook.com/Chickenvillagedalat" target="_blank" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition shadow-md flex items-center gap-2">
                         <span>👍 Facebook Page</span>
@@ -164,15 +193,16 @@
 
             <!-- Cột 2: Điều hướng nhanh -->
             <div>
-                <h4 class="text-white font-bold text-base uppercase tracking-wider mb-4" data-vi="Thực Đơn & Thông Tin" data-en="Menu & Info">Thực Đơn & Thông Tin</h4>
+                <h4 class="text-white font-bold text-base uppercase tracking-wider mb-4" data-vi="Thông Tin" data-en="Information">Thông Tin</h4>
                 <ul class="space-y-2 text-sm text-slate-400">
                     <li><a href="#gioi-thieu" class="hover:text-amber-400 transition" data-vi="Giới Thiệu" data-en="About">Giới Thiệu</a></li>
-                    <li><a href="#truyen-thuyet" class="hover:text-amber-400 transition" data-vi="Hương Vị Đặc Sắc" data-en="Signature Flavor">Hương Vị Đặc Sắc</a></li>
-                    <li><a href="#thu-vien" class="hover:text-amber-400 transition" data-vi="Thư Viện Ảnh" data-en="Photo Gallery">Thư Viện Ảnh</a></li>
+                    <li><a href="#truyen-thuyet" class="hover:text-amber-400 transition" data-vi="Truyền Thuyết" data-en="Legend">Truyền Thuyết</a></li>
+                    <li><a href="#trai-nghiem" class="hover:text-amber-400 transition" data-vi="Trải Nghiệm" data-en="Experiences">Trải Nghiệm</a></li>
+                    <li><a href="#thu-vien" class="hover:text-amber-400 transition" data-vi="Thư Viện" data-en="Library">Thư Viện</a></li>
                 </ul>
             </div>
 
-            <!-- Cột 3: Bản đồ Google Maps & Dẫn đường -->
+            <!-- Cột 3: Bản đồ Google Maps & Nút Dẫn Đường -->
             <div>
                 <div class="flex items-center justify-between mb-4">
                     <h4 class="text-white font-bold text-base uppercase tracking-wider" data-vi="Bản Đồ Chỉ Đường" data-en="Google Map">Bản Đồ Chỉ Đường</h4>
@@ -189,7 +219,7 @@
         </div>
 
         <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-            &copy; 2026 Gà Quay Đại Ngàn. All rights reserved.
+            &copy; 2026 Làng Gà Darahoa. Thiết kế quảng bá du lịch địa phương.
         </div>
     </footer>
 
