@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
 <head>
@@ -41,8 +40,8 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[90vh] flex items-center justify-center bg-cover bg-center pt-20" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/banner.jpg');">
+    <!-- Hero Section với ảnh banner lửa trại & tượng gà -->
+    <section class="relative min-h-[90vh] flex items-center justify-center bg-cover bg-center pt-20" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.75)), url('images/banner.jpg');">
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
             <span class="inline-block py-1 px-4 rounded-full bg-white/20 backdrop-blur-md text-sm font-medium mb-6 border border-white/30 animate-pulse" data-vi="⛰️ Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng" data-en="⛰️ At the foot of majestic Elephant Mountain, Duc Trong, Lam Dong">
                 ⛰️ Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng
@@ -168,7 +167,6 @@
             currentLang = currentLang === 'vi' ? 'en' : 'vi';
             document.getElementById('langText').innerText = currentLang === 'vi' ? 'EN' : 'VI';
             
-            // Lấy tất cả các thẻ có thuộc tính data-vi và data-en
             const elements = document.querySelectorAll('[data-vi]');
             elements.forEach(el => {
                 if (el.tagName === 'TITLE') {
@@ -181,5 +179,3 @@
     </script>
 </body>
 </html>
-
-```
