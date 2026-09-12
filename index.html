@@ -1,220 +1,296 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khám Phá Văn Hóa K'Ho</title>
-    <!-- Thêm Font chữ Montserrat từ Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Trang Trại Gà - Website Chính Thức</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1b4d3e, #2e8b57);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo-container {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 15px auto;
-            border-radius: 50%;
-            overflow: hidden;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            position: relative;
-        }
-
-        .logo-container img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-            /* Hiệu ứng trượt qua lại từ trái sang phải */
-            animation: slideLeftRight 3s ease-in-out infinite alternate;
-        }
-
+        * { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Hiệu ứng trượt qua lại từ trái sang phải cho logo con gà */
         @keyframes slideLeftRight {
             0% {
-                transform: translateX(-15px);
+                transform: translateX(-8px);
             }
             100% {
-                transform: translateX(15px);
+                transform: translateX(8px);
             }
         }
-
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            font-weight: 700;
+        .animate-spin-slow {
+            animation: slideLeftRight 2s ease-in-out infinite alternate;
+        }
+        .logo-container:hover .animate-spin-slow {
+            animation-play-state: paused;
         }
 
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #1b4d3e;
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-        }
-
-        .card-img-container {
-            width: 100%;
-            height: 240px;
-            overflow: hidden;
-            background-color: #e1e4e8;
-        }
-
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .card:hover img {
-            transform: scale(1.05);
-        }
-
-        .card-content {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card-content h3 {
-            font-size: 1.3rem;
-            color: #222;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .card-content p {
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        footer {
-            background-color: #1b4d3e;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
+        /* Hiệu ứng trượt từ trái sang phải cho khối ảnh thư viện */
+        @keyframes slideFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
             }
-            .container {
-                margin: 20px auto;
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
+        }
+        .slide-left-item {
+            animation: slideFromLeft 0.8s ease-out forwards;
         }
     </style>
 </head>
-<body>
+<body class="bg-amber-50/30 text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
 
-    <header>
-        <div class="logo-container">
-            <!-- Logo hình con gà ở đầu trang -->
-            <img src="images/tuongga.png" alt="Logo Gà K'Ho">
+    <!-- HEADER & NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-amber-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo & Brand -->
+            <a href="#" class="flex items-center gap-3 logo-container group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-400 flex items-center justify-center text-white shadow-md shadow-amber-500/20">
+                    <i class="fa-solid fa-feather text-2xl animate-spin-slow"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-amber-600 transition-colors">TRẠI GÀ SẠCH</span>
+                    <span class="block text-xs font-medium text-amber-600 tracking-wider uppercase">Chất Lượng Vàng</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+                <a href="#about" class="hover:text-amber-600 transition-colors">Giới Thiệu</a>
+                <a href="#products" class="hover:text-amber-600 transition-colors">Sản Phẩm</a>
+                <a href="#gallery" class="hover:text-amber-600 transition-colors">Thư Viện</a>
+                <a href="#map" class="hover:text-amber-600 transition-colors">Bản Đồ</a>
+                <a href="#contact" class="hover:text-amber-600 transition-colors">Liên Hệ</a>
+            </nav>
+
+            <!-- CTA Button & Mobile Menu Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="tel:0123456789" class="hidden sm:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-lg shadow-amber-500/30 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>0123.456.789</span>
+                </a>
+            </div>
         </div>
-        <h1>Khám Phá Văn Hóa Bản Địa K'Ho</h1>
-        <p>Trải nghiệm không gian mộc mạc và truyền thống dưới chân núi Voi</p>
     </header>
 
-    <div class="container">
-        <h2 class="section-title">Các Trải Nghiệm Nổi Bật</h2>
-        
-        <div class="grid">
-            <!-- Thẻ 1 -->
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="images/tuongga.png" alt="Tượng Gà Khổng Lồ">
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-amber-50/80 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-800 text-xs font-bold tracking-wider uppercase">
+                        <i class="fa-solid fa-shield-check"></i> 100% Chăn Nuôi Hữu Cơ
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Thực Phẩm Sạch Cho <span class="text-amber-600">Sức Khỏe Vàng</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+                        Cung cấp gia cầm sạch, trứng gà tươi và các sản phẩm chất lượng cao được nuôi dưỡng theo tiêu chuẩn hữu cơ khép kín, an toàn tuyệt đối cho sức khỏe gia đình bạn.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#products" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-amber-600/30 transition-all text-center">
+                            Khám Phá Sản Phẩm
+                        </a>
+                        <a href="#map" class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-location-dot text-amber-600"></i> Xem Đường Đi
+                        </a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h3>Tượng Gà Khổng Lồ</h3>
-                    <p>Biểu tượng tự hào của đồng bào K'Ho gắn liền với truyền thuyết văn hóa lâu đời.</p>
-                </div>
-            </div>
-
-            <!-- Thẻ 2 -->
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="images/doisongbandia.png" alt="Đời Sống Bản Địa">
-                </div>
-                <div class="card-content">
-                    <h3>Đời Sống Bản Địa</h3>
-                    <p>Nhà cửa và nếp sống mộc mạc, gần gũi với thiên nhiên của người dân địa phương.</p>
-                </div>
-            </div>
-
-            <!-- Thẻ 3 -->
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="images/canhquanthiennhien.png" alt="Cảnh Quan Thiên Nhiên">
-                </div>
-                <div class="card-content">
-                    <h3>Cảnh Quan Thiên Nhiên</h3>
-                    <p>Không gian xanh mát, trong lành dưới chân núi Voi hùng vĩ.</p>
+                <!-- Hero Video/Image Showcase -->
+                <div class="relative slide-left-item">
+                    <div class="relative mx-auto max-w-md lg:max-w-none rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-amber-100">
+                        <div class="aspect-video w-full flex items-center justify-center bg-slate-900 text-white relative group">
+                            <!-- Thay link iframe youtube của bạn vào đây nếu muốn -->
+                            <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&q=80&w=800" alt="Trang trại gà" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl shadow-xl animate-pulse cursor-pointer">
+                                    <i class="fa-solid fa-play ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Văn Hóa K'Ho. Bảo lưu mọi quyền.</p>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Về Trại Gà Của Chúng Tôi</h2>
+                <p class="mt-4 text-slate-600 text-lg">Quy mô khép kín, chú trọng chất lượng dinh dưỡng và môi trường sống tự nhiên cho đàn gia cầm.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-amber-50/50 border border-amber-100 text-center hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl mx-auto mb-6 shadow-md shadow-amber-500/20">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Thức Ăn Hữu Cơ</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Nguồn thức ăn hoàn toàn từ ngô, gạo lứt và thảo mộc, không chứa chất kích thích tăng trưởng.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-amber-50/50 border border-amber-100 text-center hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl mx-auto mb-6 shadow-md shadow-amber-500/20">
+                        <i class="fa-solid fa-house-chimney-window"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Môi Trường Tự Nhiên</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Đàn gà được thả vườn rộng rãi, đón ánh nắng tự nhiên giúp thịt săn chắc và trứng thơm ngon đậm đà.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-amber-50/50 border border-amber-100 text-center hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl mx-auto mb-6 shadow-md shadow-amber-500/20">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Kiểm Định An Toàn</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Đạt chuẩn vệ sinh an toàn thực phẩm, quy trình tiêm phòng và kiểm dịch định kỳ nghiêm ngặt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Sản Phẩm Nổi Bật</h2>
+                <p class="mt-4 text-slate-600 text-lg">Cung cấp sỉ và lẻ các sản phẩm tươi sạch mỗi ngày từ trang trại.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
+                    <div class="aspect-video overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&q=80&w=600" alt="Gà ta thả vườn" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Gà Ta Thả Vườn Sạch</h3>
+                        <p class="text-slate-600 text-sm mb-4">Thịt dai ngon, ngọt tự nhiên, thích hợp cho các món luộc, nướng, lẩu.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-600 font-extrabold text-lg">120.000đ / kg</span>
+                            <a href="tel:0123456789" class="bg-amber-100 hover:bg-amber-500 text-amber-800 hover:text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">Đặt Mua</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
+                    <div class="aspect-video overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80&w=600" alt="Trứng gà sạch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Trứng Gà Sạch Thảo Mộc</h3>
+                        <p class="text-slate-600 text-sm mb-4">Trứng lòng đỏ đậm, giàu dinh dưỡng, không tanh, thu hoạch mới mỗi ngày.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-600 font-extrabold text-lg">35.000đ / chục</span>
+                            <a href="tel:0123456789" class="bg-amber-100 hover:bg-amber-500 text-amber-800 hover:text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">Đặt Mua</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
+                    <div class="aspect-video overflow-hidden bg-slate-100 relative">
+                        <img src="https://images.unsplash.com/photo-1598108639203-34e8f7d0c354?auto=format&fit=crop&q=80&w=600" alt="Gà giống" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Gà Giống Chất Lượng Cao</h3>
+                        <p class="text-slate-600 text-sm mb-4">Gà con khỏe mạnh, đã được tiêm phòng đầy đủ vaccine cơ bản.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-600 font-extrabold text-lg">Liên Hệ</span>
+                            <a href="tel:0123456789" class="bg-amber-100 hover:bg-amber-500 text-amber-800 hover:text-white px-4 py-2 rounded-xl text-sm font-bold transition-colors">Tư Vấn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Thư Viện Trang Trại</h2>
+                <p class="mt-4 text-slate-600 text-lg">Hình ảnh thực tế từ khu vực chăn nuôi và chăm sóc gia cầm.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-2xl shadow-sm aspect-square">
+                    <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&q=80&w=400" alt="Trại gà" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-sm aspect-square">
+                    <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80&w=400" alt="Trứng gà" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-sm aspect-square">
+                    <img src="https://images.unsplash.com/photo-1598108639203-34e8f7d0c354?auto=format&fit=crop&q=80&w=400" alt="Chăn nuôi" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-sm aspect-square">
+                    <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&q=80&w=400" alt="Khuôn viên" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP & LOCATION SECTION -->
+    <section id="map" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Đường Đi Đến Trang Trại</h2>
+                <p class="mt-4 text-slate-600 text-lg">Ghé thăm trực tiếp trang trại của chúng tôi để tham quan và mua sắm sản phẩm tươi ngon nhất.</p>
+            </div>
+            <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+                <!-- Google Map Iframe (Bạn có thể thay đổi src thành địa chỉ thực tế của bạn) -->
+                <div class="w-full h-96 rounded-2xl overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.284249121667!2d108.4583!3d11.9404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317112d957ba691b%3A0x3574d7f551cbb7a!2zxJDDoCBM4bqhdCwgTGxvYXJlLCBWaWV0bmFt!5e0!3m2!1svi!2s!4v1620000000000!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & CONTACT -->
+    <footer id="contact" class="bg-slate-900 text-slate-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-feather"></i>
+                        </div>
+                        <span class="text-lg font-bold text-white">TRẠI GÀ SẠCH</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Cam kết mang lại nguồn thực phẩm an toàn, chất lượng cao và uy tín hàng đầu cho mọi bữa ăn gia đình Việt.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Thông Tin Liên Hệ</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-amber-500"></i>
+                            <span>Khu vực Lâm Đồng, Việt Nam</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-amber-500"></i>
+                            <span>0123.456.789</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-amber-500"></i>
+                            <span>lienhe@traigasach.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Giờ Hoạt Động</h4>
+                    <p class="text-slate-400 text-sm mb-2">Thứ Hai - Chủ Nhật: 7:00 - 18:00</p>
+                    <p class="text-slate-400 text-sm">Phục vụ tư vấn và giao hàng tận nơi các ngày trong tuần.</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Trại Gà Sạch. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
 </body>
