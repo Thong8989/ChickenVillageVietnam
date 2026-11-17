@@ -11,6 +11,10 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ⭐ Elfsight Platform Script ⭐ -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         
@@ -49,7 +53,7 @@
                 <a href="#truyen-thuyet" class="hover:text-amber-600 transition" data-vi="Truyền thuyết" data-en="Legend">Truyền thuyết</a>
                 <a href="#trai-nghiem" class="hover:text-amber-600 transition" data-vi="Trải nghiệm" data-en="Experiences">Trải nghiệm</a>
                 <a href="#thu-vien" class="hover:text-amber-600 transition" data-vi="Thư viện" data-en="Library">Thư viện</a>
-                <a href="#danh-gia" class="hover:text-amber-600 transition" data-vi="Đánh giá thực tế" data-en="Real Reviews">Đánh giá thực tế</a>
+                <a href="#danh-gia" class="hover:text-amber-600 transition" data-vi="Đánh giá" data-en="Reviews">Đánh giá</a>
                 <a href="#lien-he" class="hover:text-amber-600 transition" data-vi="Bản đồ & Liên hệ" data-en="Map & Contact">Bản đồ & Liên hệ</a>
             </nav>
 
@@ -170,90 +174,18 @@
         </div>
     </section>
 
-    <!-- ⭐ ĐÁNH GIÁ GOOGLE MAPS THỜI GIAN THỰC CHÍNH XÁC (TỪ NGƯỜI DÙNG THẬT) ⭐ -->
+    <!-- ⭐ SECTION ĐÁNH GIÁ GOOGLE MAPS THỜI GIAN THỰC (TỪ NGƯỜI DÙNG THẬT) ⭐ -->
     <section id="danh-gia" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-sm font-bold tracking-widest text-amber-600 uppercase mb-2" data-vi="Đánh Giá Google Maps" data-en="Google Maps Reviews">Đánh Giá Google Maps</h2>
             <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-3" data-vi="Trải Nghiệm Thực Tế Từ Khách Du Lịch" data-en="Real Experiences From Travelers">Trải Nghiệm Thực Tế Từ Khách Du Lịch</h3>
-            <p class="text-slate-600 text-sm max-w-xl mx-auto font-light" data-vi="Tổng hợp phản hồi thực tế chính xác từ địa điểm Làng Con Gà trên Google Maps." data-en="Accurate feedback from real visitors at Chicken Village on Google Maps.">
-                Tổng hợp phản hồi thực tế chính xác từ địa điểm Làng Con Gà trên Google Maps.
+            <p class="text-slate-600 text-sm max-w-xl mx-auto font-light" data-vi="Đánh giá thời gian thực được đồng bộ tự động trực tiếp từ Google Maps." data-en="Real-time reviews synchronized automatically directly from Google Maps.">
+                Đánh giá thời gian thực được đồng bộ tự động trực tiếp từ Google Maps.
             </p>
         </div>
 
-        <!-- Khung hiển thị đánh giá thời gian thực chuẩn vị trí -->
-        <div id="google-reviews-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Đánh giá thật 1 -->
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between hover:shadow-md transition">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 font-bold flex items-center justify-center text-sm">
-                                T
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">Thanh Thảo</h4>
-                                <span class="text-slate-400 text-xs" data-vi="Đánh giá trên Google Maps" data-en="Google Maps Review">Đánh giá trên Google Maps</span>
-                            </div>
-                        </div>
-                        <span class="text-xs bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-full font-medium flex items-center gap-1">
-                            ✓ Người dùng thật
-                        </span>
-                    </div>
-                    <div class="text-amber-500 text-sm mb-2 tracking-widest">★★★★★</div>
-                    <p class="text-slate-600 text-xs sm:text-sm font-light leading-relaxed" data-vi="Địa điểm mang đậm nét văn hóa bản địa K'Ho dưới chân núi Voi. Bức tượng gà 9 cựa rất độc đáo, không khí trong lành, đáng để ghé thăm khi đến Đức Trọng." data-en="A place deeply imbued with K'Ho indigenous culture at the foot of Elephant Mountain. The 9-spurred chicken statue is very unique and worth visiting.">
-                        "Địa điểm mang đậm nét văn hóa bản địa K'Ho dưới chân núi Voi. Bức tượng gà 9 cựa rất độc đáo, không khí trong lành, đáng để ghé thăm khi đến Đức Trọng."
-                    </p>
-                </div>
-            </div>
-
-            <!-- Đánh giá thật 2 -->
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between hover:shadow-md transition">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 font-bold flex items-center justify-center text-sm">
-                                H
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">Hoàng Long</h4>
-                                <span class="text-slate-400 text-xs" data-vi="Đánh giá trên Google Maps" data-en="Google Maps Review">Đánh giá trên Google Maps</span>
-                            </div>
-                        </div>
-                        <span class="text-xs bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-full font-medium flex items-center gap-1">
-                            ✓ Người dùng thật
-                        </span>
-                    </div>
-                    <div class="text-amber-500 text-sm mb-2 tracking-widest">★★★★★</div>
-                    <p class="text-slate-600 text-xs sm:text-sm font-light leading-relaxed" data-vi="Đường đi thuận tiện theo QL20, cảnh quan yên bình. Tìm hiểu thêm được nhiều nét đẹp về nghề dệt thổ cẩm truyền thống." data-en="Convenient access along Highway 20, peaceful scenery. Learned more about traditional brocade weaving.">
-                        "Đường đi thuận tiện theo QL20, cảnh quan yên bình. Tìm hiểu thêm được nhiều nét đẹp về nghề dệt thổ cẩm truyền thống."
-                    </p>
-                </div>
-            </div>
-
-            <!-- Đánh giá thật 3 -->
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between hover:shadow-md transition">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 font-bold flex items-center justify-center text-sm">
-                                M
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">Minh Triết</h4>
-                                <span class="text-slate-400 text-xs" data-vi="Đánh giá trên Google Maps" data-en="Google Maps Review">Đánh giá trên Google Maps</span>
-                            </div>
-                        </div>
-                        <span class="text-xs bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-full font-medium flex items-center gap-1">
-                            ✓ Người dùng thật
-                        </span>
-                    </div>
-                    <div class="text-amber-500 text-sm mb-2 tracking-widest">★★★★★</div>
-                    <p class="text-slate-600 text-xs sm:text-sm font-light leading-relaxed" data-vi="Một biểu tượng gắn liền với bao thế hệ du khách khi đi qua Đức Trọng, Lâm Đồng. Rất tuyệt vời!" data-en="An iconic landmark for generations of travelers passing through Duc Trong, Lam Dong. Excellent!">
-                        "Một biểu tượng gắn liền với bao thế hệ du khách khi đi qua Đức Trọng, Lâm Đồng. Rất tuyệt vời!"
-                    </p>
-                </div>
-            </div>
-        </div>
+        <!-- Elfsight Google Reviews Widget -->
+        <div class="elfsight-app-e465141d-0784-4486-81ab-bfe976ac2833" data-elfsight-app-lazy></div>
         
         <div class="text-center mt-10">
             <a href="https://maps.app.goo.gl/VyS5paCb2Pw6vStN6" target="_blank" class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg transition text-sm">
@@ -269,8 +201,8 @@
                 <h3 class="text-white font-bold text-xl mb-4 flex items-center gap-2">
                     <span>🐓</span> <span data-vi="Khu Du Lịch Làng Gà Darahoa" data-en="Darahoa Chicken Village"> Làng Gà Darahoa</span>
                 </h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4" data-vi="📍 Địa chỉ: Đarahoa, QL20, Đức Trọng, Lâm Đồng." data-en="📍 Address: Darahoa, QL20, Duc Trong, Lam Dong.">
-                    📍 Địa chỉ: Đarahoa, QL20, Đức Trọng, Lâm Đồng.
+                <p class="text-slate-400 text-sm leading-relaxed mb-4" data-vi="📍 Địa chỉ: Đarahoa, QL20, Đức Trọng, Lâm Đồng (Dưới chân núi Voi hùng vĩ)." data-en="📍 Address: Darahoa, QL20, Duc Trong, Lam Dong.">
+                    📍 Địa chỉ: Thôn Đarahoa, Xã Hiệp Thạnh, Huyện Đức Trọng, Tỉnh Lâm Đồng.
                 </p>
                 <p class="text-slate-400 text-sm mb-2">📞 Điện thoại: Update</p>
                 <p class="text-slate-400 text-sm mb-4">📧 Email: info@langgadarahoa.com.vn</p>
