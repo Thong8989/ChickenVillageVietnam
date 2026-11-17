@@ -3,89 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-vi="Khám Phá Làng Con Gà - Vẻ Đẹp Dưới Chân Núi Voi" data-en="Discover Chicken Village - Elephant Mountain's Beauty">Khám Phá Làng Gà Con Gà - Vẻ Đẹp Dưới Chân Núi Voi</title>
+    <title data-lang-title>Khám Phá Làng Con Gà - Vẻ Đẹp Dưới Chân Núi Voi</title>
     
-    <!-- Favicon hình con gà trên tab trình duyệt -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐓</text></svg>">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- ⭐ Elfsight Platform Script ⭐ -->
+    <!-- Elfsight Platform Script -->
     <script src="https://elfsightcdn.com/platform.js" async></script>
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        
-        @keyframes slideFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
-        .slide-left-item {
-            animation: slideFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
+<body class="bg-stone-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <!-- Header / Navbar Phong Cách Du Lịch Hiện Đại -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-stone-200/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 rounded-2xl bg-amber-100 border border-amber-200 flex items-center justify-center shadow-inner overflow-hidden relative">
-                    <span class="text-2xl inline-block drop-shadow-md">🐓</span>
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-md shadow-amber-600/20 text-white font-bold text-xl">
+                    🐓
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-lg font-bold tracking-tight text-amber-700 leading-tight" data-vi="Làng Gà Darahoa" data-en="Darahoa Village">Làng Gà Darahoa</span>
-                    <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold" data-vi="Du Lịch Văn Hóa K'Ho" data-en="K'Ho Cultural Tourism">Du Lịch Văn Hóa K'Ho</span>
+                    <span class="text-base font-extrabold tracking-tight text-slate-900 leading-tight">Làng Gà Darahoa</span>
+                    <span class="text-[10px] uppercase tracking-wider text-amber-700 font-bold" data-i18n="nav_sub">Du Lịch Văn Hóa K'Ho</span>
                 </div>
             </a>
             
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
-                <a href="#gioi-thieu" class="hover:text-amber-600 transition" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
-                <a href="#truyen-thuyet" class="hover:text-amber-600 transition" data-vi="Truyền thuyết" data-en="Legend">Truyền thuyết</a>
-                <a href="#trai-nghiem" class="hover:text-amber-600 transition" data-vi="Trải nghiệm" data-en="Experiences">Trải nghiệm</a>
-                <a href="#thu-vien" class="hover:text-amber-600 transition" data-vi="Thư viện" data-en="Library">Thư viện</a>
-                <a href="#danh-gia" class="hover:text-amber-600 transition" data-vi="Đánh giá" data-en="Reviews">Đánh giá</a>
-                <a href="#lien-he" class="hover:text-amber-600 transition" data-vi="Bản đồ & Liên hệ" data-en="Map & Contact">Bản đồ & Liên hệ</a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#gioi-thieu" class="hover:text-amber-600 transition" data-i18n="nav_about">Giới thiệu</a>
+                <a href="#truyen-thuyet" class="hover:text-amber-600 transition" data-i18n="nav_legend">Truyền thuyết</a>
+                <a href="#trai-nghiem" class="hover:text-amber-600 transition" data-i18n="nav_exp">Trải nghiệm</a>
+                <a href="#thu-vien" class="hover:text-amber-600 transition" data-i18n="nav_lib">Thư viện ảnh</a>
+                <a href="#danh-gia" class="hover:text-amber-600 transition" data-i18n="nav_reviews">Đánh giá thực tế</a>
+                <a href="#lien-he" class="hover:text-amber-600 transition" data-i18n="nav_contact">Liên hệ</a>
             </nav>
 
-            <div class="flex items-center gap-4">
-                <button id="langToggle" onclick="toggleLanguage()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-3 py-1.5 rounded-full text-xs transition flex items-center gap-1 border border-slate-200">
-                    🌐 <span id="langText">EN</span>
-                </button>
-                <a href="#lien-he" class="hidden sm:inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium px-5 py-2.5 rounded-full shadow-lg shadow-amber-600/20 transition-all duration-300 transform hover:-translate-y-0.5" data-vi="Liên hệ ngay" data-en="Contact Us">
-                    Liên hệ ngay
+            <div class="flex items-center gap-3">
+                <!-- Dropdown Chọn Ngôn Ngữ Đa Quốc Gia -->
+                <div class="relative">
+                    <select id="langSelector" onchange="changeLanguage(this.value)" class="appearance-none bg-stone-100 hover:bg-stone-200 text-slate-700 font-semibold px-4 py-2 pr-8 rounded-full text-xs transition border border-stone-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        <option value="vi">🇻🇳 Tiếng Việt</option>
+                        <option value="en">🇬🇧 English</option>
+                        <option value="fr">🇫🇷 Français</option>
+                        <option value="ja">🇯🇵 日本語</option>
+                        <option value="ko">🇰🇷 한국어</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500 text-xs">
+                        ▼
+                    </div>
+                </div>
+
+                <a href="#lien-he" class="hidden sm:inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs px-5 py-2.5 rounded-full shadow-lg shadow-amber-600/20 transition-all transform hover:-translate-y-0.5" data-i18n="btn_book">
+                    Khám phá ngay
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[90vh] flex items-center justify-center bg-cover bg-center pt-20" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.75)), url('images/banner.jpg');">
-        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-            <span class="inline-block py-1 px-4 rounded-full bg-white/20 backdrop-blur-md text-sm font-medium mb-6 border border-white/30 animate-pulse" data-vi="⛰️ Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng" data-en="⛰️ At the foot of majestic Elephant Mountain, Duc Trong, Lam Dong">
-                ⛰️ Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng
-            </span>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-                <span data-vi="Khám Phá" data-en="Discover">Khám Phá</span> <span class="text-amber-400" data-vi="Làng Gà Darahoa" data-en="Darahoa Chicken Village">Làng Gà Darahoa</span>
+    <!-- Hero Section Đậm Chất Travel Platform -->
+    <section class="relative min-h-[92vh] flex items-center justify-center bg-cover bg-center pt-20" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75)), url('images/banner.jpg');">
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
+            <div class="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white/15 backdrop-blur-md text-xs sm:text-sm font-medium mb-6 border border-white/20 shadow-xl">
+                <span>⛰️</span> <span data-i18n="hero_badge">Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-sm">
+                <span data-i18n="hero_title_1">Khám Phá Vẻ Đẹp</span> <span class="text-amber-400" data-i18n="hero_title_2">Làng Gà Darahoa</span>
             </h1>
-            <p class="text-lg sm:text-xl text-slate-200 mb-10 max-w-2xl mx-auto font-light" data-vi="Nơi lưu giữ bức tượng gà 9 cựa khổng lồ, đậm đà bản sắc văn hóa đại ngàn Tây Nguyên của đồng bào K'Ho." data-en="Home to the giant 9-spurred chicken statue, deeply infused with the cultural identity of the K'Ho ethnic minority in the Central Highlands.">
+            <p class="text-base sm:text-xl text-stone-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed" data-i18n="hero_desc">
                 Nơi lưu giữ bức tượng gà 9 cựa khổng lồ, đậm đà bản sắc văn hóa đại ngàn Tây Nguyên của đồng bào K'Ho.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#truyen-thuyet" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl transition-all duration-300" data-vi="Đọc truyền thuyết" data-en="Read Legend">
+                <a href="#truyen-thuyet" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-2xl shadow-2xl shadow-amber-600/40 transition-all duration-300 transform hover:-translate-y-1" data-i18n="hero_btn_1">
                     Đọc truyền thuyết
                 </a>
-                <a href="#thu-vien" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-4 rounded-2xl transition-all duration-300" data-vi="Xem Thư Viện" data-en="View Library">
-                    Xem Thư Viện
+                <a href="#thu-vien" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-4 rounded-2xl transition-all duration-300" data-i18n="hero_btn_2">
+                    Xem Thư Viện Ảnh
                 </a>
             </div>
         </div>
@@ -94,93 +104,93 @@
     <!-- Giới Thiệu & Truyền Thuyết -->
     <section id="truyen-thuyet" class="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-sm font-bold tracking-widest text-amber-600 uppercase mb-3" data-vi="Câu chuyện sử thi" data-en="Epic Story">Câu chuyện sử thi</h2>
-            <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6" data-vi="Truyền thuyết về chú Gà 9 cựa" data-en="The Legend of the 9-Spurred Chicken">Truyền thuyết về chú Gà 9 cựa</h3>
-            <p class="text-lg text-slate-600 leading-relaxed font-light max-w-3xl mx-auto" data-vi="Cái tên làng Gà gắn liền với câu chuyện tình yêu cảm động giữa nàng H'Bia và chàng K'Tien. Vì những thách cưới ngặt nghèo (trong đó có gà 9 cựa), đôi trẻ đã kiệt sức và hóa thân vào đại ngàn. Bức tượng gà trống 9 cựa cao lớn sừng sững giữa làng được dựng lên như một biểu tượng của sự thủy chung và khát vọng tự do." data-en="The village's name is tied to a touching love story between H'Bia and K'Tien. Due to strict marriage demands (including a 9-spurred chicken), the young couple exhausted themselves and merged into the mountains. The towering statue of the 9-spurred rooster stands as a symbol of loyalty and freedom.">
+            <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-3 block" data-i18n="story_tag">Câu chuyện sử thi</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6" data-i18n="story_title">Truyền thuyết về chú Gà 9 cựa</h2>
+            <p class="text-lg text-slate-600 leading-relaxed font-light max-w-3xl mx-auto" data-i18n="story_desc">
                 Cái tên làng Gà gắn liền với câu chuyện tình yêu cảm động giữa nàng H'Bia và chàng K'Tien. Vì những thách cưới ngặt nghèo (trong đó có gà 9 cựa), đôi trẻ đã kiệt sức và hóa thân vào đại ngàn. Bức tượng gà trống 9 cựa cao lớn sừng sững giữa làng được dựng lên như một biểu tượng của sự thủy chung và khát vọng tự do.
             </p>
         </div>
 
-        <div id="trai-nghiem" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                <div class="text-3xl mb-4">🗿</div>
-                <h4 class="text-xl font-bold text-slate-900 mb-2" data-vi="Tượng Gà 9 Cựa" data-en="9-Spurred Chicken Statue">Tượng Gà 9 Cựa</h4>
-                <p class="text-slate-600 text-sm font-light leading-relaxed" data-vi="Công trình biểu tượng cao 3.2m nặng 8 tấn được thiết kế từ năm 1978, ghi dấu ấn sâu đậm trong lòng du khách." data-en="An iconic 3.2m tall, 8-ton monument built in 1978, leaving a deep impression on every visitor.">Công trình biểu tượng cao 3.2m nặng 8 tấn được thiết kế từ năm 1978, ghi dấu ấn sâu đậm trong lòng du khách.</p>
+        <div id="trai-nghiem" class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
+            <div class="bg-white p-8 rounded-3xl shadow-xl shadow-stone-200/50 border border-stone-100 transition hover:-translate-y-1 duration-300">
+                <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-6 shadow-inner">🗿</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="feat_1_title">Tượng Gà 9 Cựa</h3>
+                <p class="text-slate-600 text-sm font-light leading-relaxed" data-i18n="feat_1_desc">Công trình biểu tượng cao 3.2m nặng 8 tấn được thiết kế từ năm 1978, ghi dấu ấn sâu đậm trong lòng du khách.</p>
             </div>
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                <div class="text-3xl mb-4">🧵</div>
-                <h4 class="text-xl font-bold text-slate-900 mb-2" data-vi="Dệt Thổ Cẩm" data-en="Brocade Weaving">Dệt Thổ Cẩm</h4>
-                <p class="text-slate-600 text-sm font-light leading-relaxed" data-vi="Trải nghiệm quan sát những khung dệt thủ công truyền thống và sự khéo léo của các thiếu nữ đồng bào K'Ho." data-en="Experience traditional manual looms and witness the exquisite craftsmanship of K'Ho women.">Trải nghiệm quan sát những khung dệt thủ công truyền thống và sự khéo léo của các thiếu nữ đồng bào K'Ho.</p>
+            <div class="bg-white p-8 rounded-3xl shadow-xl shadow-stone-200/50 border border-stone-100 transition hover:-translate-y-1 duration-300">
+                <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-6 shadow-inner">🧵</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="feat_2_title">Dệt Thổ Cẩm</h3>
+                <p class="text-slate-600 text-sm font-light leading-relaxed" data-i18n="feat_2_desc">Trải nghiệm quan sát những khung dệt thủ công truyền thống và sự khéo léo của các thiếu nữ đồng bào K'Ho.</p>
             </div>
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                <div class="text-3xl mb-4">🔥</div>
-                <h4 class="text-xl font-bold text-slate-900 mb-2" data-vi="Văn Hóa Cồng Chiêng" data-en="Gong Culture">Văn Hóa Cồng Chiêng</h4>
-                <p class="text-slate-600 text-sm font-light leading-relaxed" data-vi="Hòa mình vào không gian sinh hoạt cộng đồng, thưởng thức hương vị rượu cần nồng ấm." data-en="Immerse yourself in community gatherings and enjoy traditional local wine.">Hòa mình vào không gian sinh hoạt cộng đồng, thưởng thức hương vị rượu cần nồng ấm.</p>
+            <div class="bg-white p-8 rounded-3xl shadow-xl shadow-stone-200/50 border border-stone-100 transition hover:-translate-y-1 duration-300">
+                <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-6 shadow-inner">🔥</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3" data-i18n="feat_3_title">Văn Hóa Cồng Chiêng</h3>
+                <p class="text-slate-600 text-sm font-light leading-relaxed" data-i18n="feat_3_desc">Hòa mình vào không gian sinh hoạt cộng đồng, thưởng thức hương vị rượu cần nồng ấm giữa núi rừng.</p>
             </div>
         </div>
     </section>
 
-    <!-- Thư Viện -->
-    <section id="thu-vien" class="py-20 bg-slate-100 px-4 sm:px-6 lg:px-8">
+    <!-- Thư Viện Ảnh & Video -->
+    <section id="thu-vien" class="py-20 bg-stone-100/80 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-sm font-bold tracking-widest text-amber-600 uppercase mb-2" data-vi="Thư Viện Đa Phương Tiện" data-en="Media Library">Thư Viện Đa Phương Tiện</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold text-slate-900" data-vi="Không gian Làng Gà qua Video & Ảnh" data-en="Darahoa Through Video & Photos">Không gian Làng Gà qua Video & Ảnh</h3>
+                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-2 block" data-i18n="lib_tag">Thư Viện Đa Phương Tiện</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-i18n="lib_title">Không gian Làng Gà qua Video & Ảnh</h2>
             </div>
 
-            <!-- Khung Nhúng Video YouTube -->
-            <div class="bg-white p-4 sm:p-8 rounded-3xl shadow-sm border border-slate-200 mb-12">
+            <!-- YouTube Video Grid -->
+            <div class="bg-white p-4 sm:p-8 rounded-3xl shadow-lg border border-stone-200/60 mb-12">
                 <div class="max-w-3xl mx-auto text-center mb-6">
-                    <h4 class="text-2xl font-bold text-slate-900 mb-2" data-vi="Khám phá Làng Gà Darahoa trên YouTube" data-en="Explore Darahoa Village on YouTube">Khám phá Làng Gà Darahoa trên YouTube</h4>
-                    <p class="text-slate-600 text-sm font-light" data-vi="Video thực tế ghi lại cảnh sắc và đời sống văn hóa tại làng." data-en="Actual footage capturing the landscape and cultural life of the village.">Video thực tế ghi lại cảnh sắc và đời sống văn hóa tại làng.</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2" data-i18n="vid_title">Khám phá Làng Gà Darahoa trên YouTube</h3>
+                    <p class="text-slate-600 text-sm font-light" data-i18n="vid_desc">Video thực tế ghi lại cảnh sắc và đời sống văn hóa tại làng.</p>
                 </div>
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg bg-slate-900">
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-slate-900">
                     <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/7Vf5C9ixskU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
 
-            <!-- Lưới hình ảnh thư viện -->
+            <!-- Image Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="slide-left-item group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col" style="animation-delay: 0.1s;">
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-stone-200/50 flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/tuongga.png" alt="Tượng Gà Khổng Lồ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/tuongga.png" alt="Tượng Gà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Tượng Gà Khổng Lồ" data-en="Giant Chicken Statue">Tượng Gà Khổng Lồ</h4>
-                        <p class="text-slate-600 text-xs font-light" data-vi="Biểu tượng tự hào của đồng bào K'Ho" data-en="Proud symbol of the K'Ho people">Biểu tượng tự hào của đồng bào K'Ho</p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-i18n="img_1_title">Tượng Gà Khổng Lồ</h4>
+                        <p class="text-slate-500 text-xs font-light" data-i18n="img_1_desc">Biểu tượng tự hào của đồng bào K'Ho</p>
                     </div>
                 </div>
 
-                <div class="slide-left-item group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col" style="animation-delay: 0.2s;">
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-stone-200/50 flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/doisongbandia.png" alt="Đời Sống Bản Địa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/doisongbandia.png" alt="Đời sống" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Đời Sống Bản Địa" data-en="Local Lifestyle">Đời Sống Bản Địa</h4>
-                        <p class="text-slate-600 text-xs font-light" data-vi="Nhà cửa và nếp sống mộc mạc" data-en="Rustic houses and lifestyle">Nhà cửa và nếp sống mộc mạc</p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-i18n="img_2_title">Đời Sống Bản Địa</h4>
+                        <p class="text-slate-500 text-xs font-light" data-i18n="img_2_desc">Nhà cửa và nếp sống mộc mạc</p>
                     </div>
                 </div>
 
-                <div class="slide-left-item group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 flex flex-col" style="animation-delay: 0.3s;">
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-stone-200/50 flex flex-col">
                     <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/canhquanthiennhien.png" alt="Cảnh Quan Thiên Nhiên" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="images/canhquanthiennhien.png" alt="Cảnh quan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-vi="Cảnh Quan Thiên Nhiên" data-en="Natural Scenery">Cảnh Quan Thiên Nhiên</h4>
-                        <p class="text-slate-600 text-xs font-light" data-vi="Không gian xanh mát dưới chân núi Voi" data-en="Green scenery at the foot of Elephant Mountain">Không gian xanh mát dưới chân núi Voi</p>
+                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-i18n="img_3_title">Cảnh Quan Thiên Nhiên</h4>
+                        <p class="text-slate-500 text-xs font-light" data-i18n="img_3_desc">Không gian xanh mát dưới chân núi Voi</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ⭐ SECTION ĐÁNH GIÁ GOOGLE MAPS THỜI GIAN THỰC (TỪ NGƯỜI DÙNG THẬT) ⭐ -->
+    <!-- Google Maps Reviews Section -->
     <section id="danh-gia" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-sm font-bold tracking-widest text-amber-600 uppercase mb-2" data-vi="Đánh Giá Google Maps" data-en="Google Maps Reviews">Đánh Giá Google Maps</h2>
-            <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-3" data-vi="Trải Nghiệm Thực Tế Từ Khách Du Lịch" data-en="Real Experiences From Travelers">Trải Nghiệm Thực Tế Từ Khách Du Lịch</h3>
-            <p class="text-slate-600 text-sm max-w-xl mx-auto font-light" data-vi="Đánh giá thời gian thực được đồng bộ tự động trực tiếp từ Google Maps." data-en="Real-time reviews synchronized automatically directly from Google Maps.">
-                Đánh giá thời gian thực được đồng bộ tự động trực tiếp từ Google Maps.
+            <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-2 block" data-i18n="rev_tag">Google Maps Reviews</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3" data-i18n="rev_title">Trải Nghiệm Thực Tế Từ Khách Du Lịch</h2>
+            <p class="text-slate-600 text-sm max-w-xl mx-auto font-light" data-i18n="rev_desc">
+                Đánh giá thời gian thực được đồng bộ tự động trực tiếp từ Google Maps của Làng Gà Darahoa.
             </p>
         </div>
 
@@ -188,82 +198,349 @@
         <div class="elfsight-app-e465141d-0784-4486-81ab-bfe976ac2833" data-elfsight-app-lazy></div>
         
         <div class="text-center mt-10">
-            <a href="https://maps.app.goo.gl/VyS5paCb2Pw6vStN6" target="_blank" class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg transition text-sm">
-                <span>⭐ Xem chi tiết và đánh giá mới nhất trên Google Maps</span>
+            <a href="https://maps.app.goo.gl/VyS5paCb2Pw6vStN6" target="_blank" class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3.5 rounded-2xl shadow-xl transition text-sm">
+                <span>⭐</span> <span data-i18n="rev_btn">Xem chi tiết trên Google Maps</span>
             </a>
         </div>
     </section>
 
-    <!-- Footer & Liên Hệ -->
-    <footer id="lien-he" class="bg-slate-900 text-slate-300 pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
+    <!-- Footer & Contact Modern Style -->
+    <footer id="lien-he" class="bg-slate-900 text-stone-300 pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
             <div>
                 <h3 class="text-white font-bold text-xl mb-4 flex items-center gap-2">
-                    <span>🐓</span> <span data-vi="Khu Du Lịch Làng Gà Darahoa" data-en="Darahoa Chicken Village"> Làng Gà Darahoa</span>
+                    <span>🐓</span> <span data-i18n="footer_title">Khu Du Lịch Làng Gà Darahoa</span>
                 </h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4" data-vi="📍 Địa chỉ: Đarahoa, QL20, Đức Trọng, Lâm Đồng (Dưới chân núi Voi hùng vĩ)." data-en="📍 Address: Darahoa, QL20, Duc Trong, Lam Dong.">
-                    📍 Địa chỉ: Thôn Đarahoa, Xã Hiệp Thạnh, Huyện Đức Trọng, Tỉnh Lâm Đồng.
+                <p class="text-stone-400 text-sm leading-relaxed mb-4" data-i18n="footer_address">
+                    📍 Địa chỉ: Thôn Đarahoa, Xã Hiệp Thạnh, Huyện Đức Trọng, Tỉnh Lâm Đồng (Dưới chân núi Voi hùng vĩ).
                 </p>
-                <p class="text-slate-400 text-sm mb-2">📞 Điện thoại: Update</p>
-                <p class="text-slate-400 text-sm mb-4">📧 Email: info@langgadarahoa.com.vn</p>
+                <p class="text-stone-400 text-sm mb-2">📞 Hotline: Update</p>
+                <p class="text-stone-400 text-sm mb-6">📧 Email: endola247@hotmail.com</p>
                 
                 <div class="flex flex-wrap items-center gap-3">
                     <a href="https://www.facebook.com/Chickenvillagedalat" target="_blank" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition shadow-md flex items-center gap-2">
                         <span>👍 Facebook Page</span>
                     </a>
                     <a href="https://m.me/474444319994591" target="_blank" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold transition shadow-md flex items-center gap-2">
-                        <span>💬 Nhắn tin Messenger</span>
+                        <span>💬 Messenger</span>
                     </a>
                 </div>
             </div>
 
             <div>
-                <h4 class="text-white font-bold text-base uppercase tracking-wider mb-4" data-vi="Thông Tin" data-en="Information">Thông Tin</h4>
-                <ul class="space-y-2 text-sm text-slate-400">
-                    <li><a href="#gioi-thieu" class="hover:text-amber-400 transition" data-vi="Giới Thiệu" data-en="About">Giới Thiệu</a></li>
-                    <li><a href="#truyen-thuyet" class="hover:text-amber-400 transition" data-vi="Truyền Thuyết" data-en="Legend">Truyền Thuyết</a></li>
-                    <li><a href="#trai-nghiem" class="hover:text-amber-400 transition" data-vi="Trải Nghiệm" data-en="Experiences">Trải Nghiệm</a></li>
-                    <li><a href="#thu-vien" class="hover:text-amber-400 transition" data-vi="Thư Viện" data-en="Library">Thư Viện</a></li>
-                    <li><a href="#danh-gia" class="hover:text-amber-400 transition" data-vi="Đánh Giá" data-en="Reviews">Đánh Giá</a></li>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4" data-i18n="footer_links_title">Điều Hướng Nhanh</h4>
+                <ul class="space-y-2.5 text-sm text-stone-400">
+                    <li><a href="#gioi-thieu" class="hover:text-amber-400 transition" data-i18n="nav_about">Giới Thiệu</a></li>
+                    <li><a href="#truyen-thuyet" class="hover:text-amber-400 transition" data-i18n="nav_legend">Truyền Thuyết</a></li>
+                    <li><a href="#trai-nghiem" class="hover:text-amber-400 transition" data-i18n="nav_exp">Trải Nghiệm</a></li>
+                    <li><a href="#thu-vien" class="hover:text-amber-400 transition" data-i18n="nav_lib">Thư Viện</a></li>
+                    <li><a href="#danh-gia" class="hover:text-amber-400 transition" data-i18n="nav_reviews">Đánh Giá</a></li>
                 </ul>
             </div>
 
             <div>
                 <div class="flex items-center justify-between mb-4">
-                    <h4 class="text-white font-bold text-base uppercase tracking-wider" data-vi="Bản Đồ Chỉ Đường" data-en="Google Map">Bản Đồ Chỉ Đường</h4>
-                    <a href="https://maps.app.goo.gl/VyS5paCb2Pw6vStN6" target="_blank" class="text-xs bg-amber-600 hover:bg-amber-700 text-white font-semibold px-3 py-1.5 rounded-lg transition shadow flex items-center gap-1">
-                        🗺️ Mở Google Maps
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider" data-i18n="footer_map_title">Bản Đồ Chỉ Đường</h4>
+                    <a href="https://maps.app.goo.gl/VyS5paCb2Pw6vStN6" target="_blank" class="text-xs bg-amber-600 hover:bg-amber-700 text-white font-semibold px-3 py-1.5 rounded-lg transition shadow">
+                        🗺️ Google Maps
                     </a>
                 </div>
                 
                 <div class="w-full rounded-2xl overflow-hidden border border-slate-700 shadow-md">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3905.379726359536!2d108.43504951129158!3d11.808656488361596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31713ffae90e9fed%3A0xdc04fc133d40922b!2sChicken%20Village%20(L%C3%A0ng%20Con%20G%C3%A0)!5e0!3m2!1svi!2s!4v1789167338465!5m2!1svi!2s" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3905.379726359536!2d108.43504951129158!3d11.808656488361596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31713ffae90e9fed%3A0xdc04fc133d40922b!2sChicken%20Village%20(L%C3%A0ng%20Con%20G%C3%A0)!5e0!3m2!1svi!2s!4v1789167338465!5m2!1svi!2s" width="100%" height="210" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-            &copy; 2026 Làng Gà Darahoa. KJYT Thiết kế mục đích quảng bá du lịch địa phương.
+        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-xs text-stone-500">
+            &copy; 2026 Làng Gà Darahoa. Thiết kế quảng bá du lịch địa phương.
         </div>
     </footer>
 
-    <!-- Script xử lý Ngôn ngữ -->
+    <!-- Script Đa Ngôn Ngữ (Việt, Anh, Pháp, Nhật, Hàn, Trung) -->
     <script>
-        let currentLang = 'vi';
-        
-        let toggleLanguage = () => {
-            currentLang = currentLang === 'vi' ? 'en' : 'vi';
-            document.getElementById('langText').innerText = currentLang === 'vi' ? 'EN' : 'VI';
+        const translations = {
+            vi: {
+                meta_title: "Khám Phá Làng Con Gà - Vẻ Đẹp Dưới Chân Núi Voi",
+                nav_sub: "Du Lịch Văn Hóa K'Ho",
+                nav_about: "Giới thiệu",
+                nav_legend: "Truyền thuyết",
+                nav_exp: "Trải nghiệm",
+                nav_lib: "Thư viện ảnh",
+                nav_reviews: "Đánh giá thực tế",
+                nav_contact: "Liên hệ",
+                btn_book: "Khám phá ngay",
+                hero_badge: "⛰️ Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng",
+                hero_title_1: "Khám Phá Vẻ Đẹp",
+                hero_title_2: "Làng Gà Darahoa",
+                hero_desc: "Nơi lưu giữ bức tượng gà 9 cựa khổng lồ, đậm đà bản sắc văn hóa đại ngàn Tây Nguyên của đồng bào K'Ho.",
+                hero_btn_1: "Đọc truyền thuyết",
+                hero_btn_2: "Xem Thư Viện Ảnh",
+                story_tag: "Câu chuyện sử thi",
+                story_title: "Truyền thuyết về chú Gà 9 cựa",
+                story_desc: "Cái tên làng Gà gắn liền với câu chuyện tình yêu cảm động giữa nàng H'Bia và chàng K'Tien. Vì những thách cưới ngặt nghèo (trong đó có gà 9 cựa), đôi trẻ đã kiệt sức và hóa thân vào đại ngàn. Bức tượng gà trống 9 cựa cao lớn sừng sững giữa làng được dựng lên như một biểu tượng của sự thủy chung và khát vọng tự do.",
+                feat_1_title: "Tượng Gà 9 Cựa",
+                feat_1_desc: "Công trình biểu tượng cao 3.2m nặng 8 tấn được thiết kế từ năm 1978, ghi dấu ấn sâu đậm trong lòng du khách.",
+                feat_2_title: "Dệt Thổ Cẩm",
+                feat_2_desc: "Trải nghiệm quan sát những khung dệt thủ công truyền thống và sự khéo léo của các thiếu nữ đồng bào K'Ho.",
+                feat_3_title: "Văn Hóa Cồng Chiêng",
+                feat_3_desc: "Hòa mình vào không gian sinh hoạt cộng đồng, thưởng thức hương vị rượu cần nồng ấm giữa núi rừng.",
+                lib_tag: "Thư Viện Đa Phương Tiện",
+                lib_title: "Không gian Làng Gà qua Video & Ảnh",
+                vid_title: "Khám phá Làng Gà Darahoa trên YouTube",
+                vid_desc: "Video thực tế ghi lại cảnh sắc và đời sống văn hóa tại làng.",
+                img_1_title: "Tượng Gà Khổng Lồ",
+                img_1_desc: "Biểu tượng tự hào của đồng bào K'Ho",
+                img_2_title: "Đời Sống Bản Địa",
+                img_2_desc: "Nhà cửa và nếp sống mộc mạc",
+                img_3_title: "Cảnh Quan Thiên Nhiên",
+                img_3_desc: "Không gian xanh mát dưới chân núi Voi",
+                rev_tag: "Google Maps Reviews",
+                rev_title: "Trải Nghiệm Thực Tế Từ Khách Du Lịch",
+                rev_desc: "Đánh giá thời gian thực được đồng bộ tự động trực tiếp từ Google Maps của Làng Gà Darahoa.",
+                rev_btn: "Xem chi tiết trên Google Maps",
+                footer_title: "Khu Du Lịch Làng Gà Darahoa",
+                footer_address: "📍 Địa chỉ: Thôn Đarahoa, Xã Hiệp Thạnh, Huyện Đức Trọng, Tỉnh Lâm Đồng.",
+                footer_links_title: "Điều Hướng Nhanh",
+                footer_map_title: "Bản Đồ Chỉ Đường"
+            },
+            en: {
+                meta_title: "Discover Chicken Village - Elephant Mountain's Beauty",
+                nav_sub: "K'Ho Cultural Tourism",
+                nav_about: "About",
+                nav_legend: "Legend",
+                nav_exp: "Experiences",
+                nav_lib: "Gallery",
+                nav_reviews: "Real Reviews",
+                nav_contact: "Contact",
+                btn_book: "Explore Now",
+                hero_badge: "⛰️ At the foot of majestic Elephant Mountain, Duc Trong, Lam Dong",
+                hero_title_1: "Discover the Beauty of",
+                hero_title_2: "Darahoa Chicken Village",
+                hero_desc: "Home to the giant 9-spurred chicken statue, deeply infused with the cultural identity of the K'Ho ethnic minority.",
+                hero_btn_1: "Read Legend",
+                hero_btn_2: "View Gallery",
+                story_tag: "Epic Story",
+                story_title: "The Legend of the 9-Spurred Chicken",
+                story_desc: "The village's name is tied to a touching love story between H'Bia and K'Tien. Due to strict marriage demands, the couple merged into the mountains. The towering statue of the 9-spurred rooster stands as a symbol of loyalty and freedom.",
+                feat_1_title: "9-Spurred Chicken Statue",
+                feat_1_desc: "An iconic 3.2m tall, 8-ton monument built in 1978, leaving a deep impression on every visitor.",
+                feat_2_title: "Brocade Weaving",
+                feat_2_desc: "Experience traditional manual looms and witness the exquisite craftsmanship of K'Ho women.",
+                feat_3_title: "Gong Culture",
+                feat_3_desc: "Immerse yourself in community gatherings and enjoy traditional local wine amidst nature.",
+                lib_tag: "Media Library",
+                lib_title: "Darahoa Through Video & Photos",
+                vid_title: "Explore Darahoa Village on YouTube",
+                vid_desc: "Actual footage capturing the landscape and cultural life of the village.",
+                img_1_title: "Giant Chicken Statue",
+                img_1_desc: "Proud symbol of the K'Ho people",
+                img_2_title: "Local Lifestyle",
+                img_2_desc: "Rustic houses and traditional lifestyle",
+                img_3_title: "Natural Scenery",
+                img_3_desc: "Green scenery at the foot of Elephant Mountain",
+                rev_tag: "Google Maps Reviews",
+                rev_title: "Real Experiences From Travelers",
+                rev_desc: "Real-time reviews synchronized automatically directly from Google Maps.",
+                rev_btn: "View details on Google Maps",
+                footer_title: "Darahoa Chicken Village Resort",
+                footer_address: "📍 Address: Darahoa Hamlet, Hiep Thanh Commune, Duc Trong District, Lam Dong.",
+                footer_links_title: "Quick Links",
+                footer_map_title: "Google Map"
+            },
+            fr: {
+                meta_title: "Découvrez le Village du Poulet - Beauté de la Montagne de l'Éléphant",
+                nav_sub: "Tourisme Culturel K'Ho",
+                nav_about: "À propos",
+                nav_legend: "Légende",
+                nav_exp: "Expériences",
+                nav_lib: "Galerie",
+                nav_reviews: "Avis Réels",
+                nav_contact: "Contact",
+                btn_book: "Explorer",
+                hero_badge: "⛰️ Au pied de la majestueuse Montagne de l'Éléphant, Lâm Đồng",
+                hero_title_1: "Découvrez le Village de",
+                hero_title_2: "Darahoa",
+                hero_desc: "Abritant la statue géante du coq à 9 éperons, profondément imprégnée de l'identité culturelle de l'ethnie K'Ho.",
+                hero_btn_1: "Lire la Légende",
+                hero_btn_2: "Voir la Galerie",
+                story_tag: "Histoire Épique",
+                story_title: "La Légende du Coq à 9 Éperons",
+                story_desc: "Le nom du village est lié à une histoire d'amour touchante entre H'Bia et K'Tien. La statue imposante du coq se dresse comme un symbole de fidélité et de liberté.",
+                feat_1_title: "Statue du Coq à 9 Éperons",
+                feat_1_desc: "Monument emblématique de 3,2 m de haut et de 8 tonnes construit en 1978.",
+                feat_2_title: "Tissage de Brocart",
+                feat_2_desc: "Découvrez les métiers à tisser traditionnels et le savoir-faire des femmes K'Ho.",
+                feat_3_title: "Culture des Gongs",
+                feat_3_desc: "Plongez dans les rassemblements communautaires et dégustez le vin de.___",
+                lib_tag: "Médiathèque",
+                lib_title: "Darahoa en Vidéo & Photos",
+                vid_title: "Explorer le Village sur YouTube",
+                vid_desc: "Images réelles capturant la vie culturelle du village.",
+                img_1_title: "Statue Géante",
+                img_1_desc: "Symbole fier du peuple K'Ho",
+                img_2_title: "Mode de Vie Local",
+                img_2_desc: "Maisons rustiques et mode de vie traditionnel",
+                img_3_title: "Paysage Naturel",
+                img_3_desc: "Scène verdoyante au pied de la montagne",
+                rev_tag: "Avis Google Maps",
+                rev_title: "Expériences Réelles des Voyageurs",
+                rev_desc: "Avis en temps réel synchronisés directement depuis Google Maps.",
+                rev_btn: "Voir sur Google Maps",
+                footer_title: "Village du Poulet Darahoa",
+                footer_address: "📍 Adresse : Hameau Darahoa, Commune Hiep Thanh, District Duc Trong, Lam Dong.",
+                footer_links_title: "Liens Rapides",
+                footer_map_title: "Carte Google"
+            },
+            ja: {
+                meta_title: "チキンビレッジ（鶏の村）ダラホアの魅力 - エレファントマウンテンのふもと",
+                nav_sub: "K'Ho文化観光",
+                nav_about: "紹介",
+                nav_legend: "伝説",
+                nav_exp: "体験",
+                nav_lib: "ギャラリー",
+                nav_reviews: "実際のレビュー",
+                nav_contact: "連絡先",
+                btn_book: "今すぐ探索",
+                hero_badge: "⛰️ 雄大な象山のふもと、ラムドン省ドゥックチョン",
+                hero_title_1: "魅力を発見：",
+                hero_title_2: "ダラホア・チキンビレッジ",
+                hero_desc: "K'Ho族の文化的アイデンティティが息づく、巨大な9本爪の鶏の像がある場所。",
+                hero_btn_1: "伝説を読む",
+                hero_btn_2: "ギャラリーを見る",
+                story_tag: "叙事詩の物語",
+                story_title: "9本爪の鶏の伝説",
+                story_desc: "村の名前は、H'BiaとK'Tienの感動的な愛の物語に由来しています。村の中心にある巨大な鶏の像は、忠誠と自由の象徴です。",
+                feat_1_title: "9本爪の鶏の像",
+                feat_1_desc: "1978年に建てられた高さ3.2m、重さ8トンの象徴的なモニュメント。",
+                feat_2_title: "伝統織物（ブロケード）",
+                feat_2_desc: "伝統的な手織り機と、K'Hoの女性たちの卓越した技術を間近で体験。",
+                feat_3_title: "ゴング文化",
+                feat_3_desc: "豊かな自然の中で、地域社会の温かい文化や地酒を楽しむ。",
+                lib_tag: "メディアライブラリー",
+                lib_title: "動画と写真で見るダラホア",
+                vid_title: "YouTubeで村を探索する",
+                vid_desc: "村の風景や文化を捉えた実際の映像。",
+                img_1_title: "巨大な鶏の像",
+                img_1_desc: "K'Ho族の誇り高きシンボル",
+                img_2_title: "ローカルな暮らし",
+                img_2_desc: "素朴な家々と伝統的な生活",
+                img_3_title: "美しい自然",
+                img_3_desc: "象山のふもとに広がる緑豊かな景色",
+                rev_tag: "Googleマップの評価",
+                rev_title: "旅行者による実際の体験",
+                rev_desc: "Googleマップから自動同期されたリアルタイムのレビュー。",
+                rev_btn: "Googleマップで詳細を見る",
+                footer_title: "ダラホア・チキンビレッジ観光地",
+                footer_address: "📍 住所：ラムドン省ドゥックチョン県ヒエプタイン村ダラホア",
+                footer_links_title: "クイックリンク",
+                footer_map_title: "Googleマップ"
+            },
+            ko: {
+                meta_title: "다라호아 닭 마을 탐방 - 코끼리산 기슭의 아름다움",
+                nav_sub: "K'Ho 문화 관광",
+                nav_about: "소개",
+                nav_legend: "전설",
+                nav_exp: "체험",
+                nav_lib: "갤러리",
+                nav_reviews: "실제 리뷰",
+                nav_contact: "연락처",
+                btn_book: "탐험하기",
+                hero_badge: "⛰️ 웅장한 코끼리산 기슭, 람동성 득쫑",
+                hero_title_1: "아름다움을 발견하다",
+                hero_title_2: "다라호아 닭 마을",
+                hero_desc: "K'Ho 소수민족의 문화적 정체성이 담긴 거대한 9발톱 닭 동상이 있는 곳입니다.",
+                hero_btn_1: "전설 읽기",
+                hero_btn_2: "갤러리 보기",
+                story_tag: "서사시 이야기",
+                story_title: "9발톱 닭의 전설",
+                story_desc: "마을 이름은 H'Bia와 K'Tien의 감동적인 사랑 이야기와 연결되어 있습니다. 마을의 거대한 닭 동상은 충성과 자유의 상징입니다.",
+                feat_1_title: "9발톱 닭 동상",
+                feat_1_desc: "1978년에 건립된 높이 3.2m, 무게 8톤의 상징적인 기념물.",
+                feat_2_title: "전통 직물 공예",
+                feat_2_desc: "전통 수동 직기로 K'Ho 여성들의 섬세한 솜씨를 직접 관찰해 보세요.",
+                feat_3_title: "공(Gong) 문화",
+                feat_3_desc: "대자연 속에서 지역 사회의 따뜻한 문화와 전통주를 즐겨보세요.",
+                lib_tag: "미디어 라이브러리",
+                lib_title: "사진과 영상으로 만나는 다라호아",
+                vid_title: "유튜브에서 다라호아 마을 탐색",
+                vid_desc: "마을의 풍경과 문화적 삶을 담은 실제 영상.",
+                img_1_title: "거대한 닭 동상",
+                img_1_desc: "K'Ho 사람들의 자랑스러운 상징",
+                img_2_title: "현지 라이프스타일",
+                img_2_desc: "소박한 가옥과 전통적인 삶의 방식",
+                img_3_title: "자연 경관",
+                img_3_desc: "코끼리산 기슭의 푸른 녹음",
+                rev_tag: "Google 지도 리뷰",
+                rev_title: "여행객들의 실제 경험",
+                rev_desc: "Google 지도에서 직접 실시간 동기화된 리뷰입니다.",
+                rev_btn: "Google 지도에서 자세히 보기",
+                footer_title: "다라호아 닭 마을 관광지",
+                footer_address: "📍 주소: 람동성 득쫑현 히엡타인 사 다라호아",
+                footer_links_title: "바로가기",
+                footer_map_title: "구글 지도"
+            },
+            zh: {
+                meta_title: "探索大象山下的达拉霍亚鸡村",
+                nav_sub: "K'Ho文化旅游",
+                nav_about: "关于我们",
+                nav_legend: "神话传说",
+                nav_exp: "特色体验",
+                nav_lib: "照片库",
+                nav_reviews: "游客真实评价",
+                nav_contact: "联系方式",
+                btn_book: "立即探索",
+                hero_badge: "⛰️ 雄伟的大象山脚下，林同省德重县",
+                hero_title_1: "探索美丽的",
+                hero_title_2: "达拉霍亚鸡村",
+                hero_desc: "这里保存着巨大的九趾鸡雕像，充满浓郁的K'Ho少数民族西原高原文化特色。",
+                hero_btn_1: "阅读传说",
+                hero_btn_2: "查看相册",
+                story_tag: "史诗故事",
+                story_title: "九趾神鸡的传说",
+                story_desc: "村庄的名字源于H'Bia与K'Tien动人的爱情故事。村中高耸的九趾公鸡雕像是忠贞与自由的象征。",
+                feat_1_title: "九趾鸡雕像",
+                feat_1_desc: "这座标志性建筑建于1978年，高3.2米，重8吨，给每位游客留下了深刻印象。",
+                feat_2_title: "传统织锦",
+                feat_2_desc: "体验传统手摇织布机，领略K'Ho族姑娘们的精湛手艺。",
+                feat_3_title: "锣钹文化",
+                feat_3_desc: "融入社区生活空间，在山林间品味温暖的传统佳酿。",
+                lib_tag: "多媒体库",
+                lib_title: "通过视频与照片感受鸡村风光",
+                vid_title: "在YouTube上探索鸡村",
+                vid_desc: "记录村庄风光与文化生活的实地视频。",
+                img_1_title: "巨型鸡雕像",
+                img_1_desc: "K'Ho族人民的骄傲象征",
+                img_2_title: "当地生活方式",
+                img_2_desc: "质朴的民房与传统生活面貌",
+                img_3_title: "自然风光",
+                img_3_desc: "大象山下苍翠清幽的自然空间",
+                rev_tag: "Google Maps 评价",
+                rev_title: "来自旅行者的真实反馈",
+                rev_desc: "直接从Google Maps实时同步的游客真实体验。",
+                rev_btn: "在Google Maps上查看详情",
+                footer_title: "达拉霍亚鸡村旅游区",
+                footer_address: "📍 地址：林同省德重县协盛社达拉霍亚村",
+                footer_links_title: "快速导航",
+                footer_map_title: "地图导航"
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang);
             
-            const elements = document.querySelectorAll('[data-vi]');
+            // Cập nhật thẻ Title
+            document.title = translations[lang].meta_title;
+
+            // Cập nhật tất cả các phần tử có thuộc tính data-i18n
+            const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
-                if (el.tagName === 'TITLE') {
-                    document.title = el.getAttribute(`data-${currentLang}`);
-                } else if (el.hasAttribute(`data-${currentLang}`)) {
-                    el.innerText = el.getAttribute(`data-${currentLang}`);
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerText = translations[lang][key];
                 }
             });
-        };
+        }
     </script>
 </body>
 </html>
