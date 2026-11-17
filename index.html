@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-lang-title>Khám Phá Làng Con Gà - Vẻ Đẹp Dưới Chân Núi Voi</title>
     
-    <!-- Favicon -->
+    <!-- Favicon hình con gà -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐓</text></svg>">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Elfsight Platform Script -->
+    <!-- Elfsight Platform Script cho Google Maps Reviews -->
     <script src="https://elfsightcdn.com/platform.js" async></script>
 
     <style>
@@ -28,6 +28,20 @@
         }
         .animate-fade-in {
             animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transform: scale(1.05);
+            transition: opacity 1.2s ease-in-out, transform 6s ease-out;
+            z-index: 0;
+        }
+        .hero-slide.active {
+            opacity: 1;
+            transform: scale(1);
         }
     </style>
 </head>
@@ -46,13 +60,13 @@
                 </div>
             </a>
             
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
-                <a href="#gioi-thieu" class="hover:text-amber-600 transition" data-i18n="nav_about">Giới thiệu</a>
+            <nav class="hidden md:flex items-center gap-7 font-medium text-sm text-slate-600">
                 <a href="#truyen-thuyet" class="hover:text-amber-600 transition" data-i18n="nav_legend">Truyền thuyết</a>
                 <a href="#trai-nghiem" class="hover:text-amber-600 transition" data-i18n="nav_exp">Trải nghiệm</a>
-                <a href="#thu-vien" class="hover:text-amber-600 transition" data-i18n="nav_lib">Thư viện ảnh</a>
-                <a href="#danh-gia" class="hover:text-amber-600 transition" data-i18n="nav_reviews">Đánh giá thực tế</a>
-                <a href="#lien-he" class="hover:text-amber-600 transition" data-i18n="nav_contact">Liên hệ</a>
+                <a href="#tour-leo-nui" class="hover:text-amber-600 transition font-semibold text-amber-700" data-i18n="nav_tour">Tour Núi Voi</a>
+                <a href="#bai-viet" class="hover:text-amber-600 transition" data-i18n="nav_blog">Cẩm nang</a>
+                <a href="#thu-vien" class="hover:text-amber-600 transition" data-i18n="nav_lib">Thư viện</a>
+                <a href="#danh-gia" class="hover:text-amber-600 transition" data-i18n="nav_reviews">Đánh giá</a>
             </nav>
 
             <div class="flex items-center gap-3">
@@ -69,15 +83,22 @@
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500 text-xs">▼</div>
                 </div>
 
-                <a href="#lien-he" class="hidden sm:inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs px-5 py-2.5 rounded-full shadow-lg shadow-amber-600/20 transition-all transform hover:-translate-y-0.5" data-i18n="btn_book">
-                    Khám phá ngay
+                <a href="#tour-leo-nui" class="hidden sm:inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs px-5 py-2.5 rounded-full shadow-lg shadow-amber-600/20 transition-all transform hover:-translate-y-0.5" data-i18n="btn_book">
+                    Đặt Tour Ngay
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[92vh] flex items-center justify-center bg-cover bg-center pt-20" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75)), url('images/banner.jpg');">
+    <!-- HERO SECTION TỰ ĐỘNG CHUYỂN ẢNH BÌA -->
+    <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-20 bg-slate-900">
+        <div id="hero-slides-container">
+            <div class="hero-slide active" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75)), url('images/banner.jpg');"></div>
+            <div class="hero-slide" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75)), url('images/tuongga.png');"></div>
+            <div class="hero-slide" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75)), url('images/canhquanthiennhien.png');"></div>
+            <div class="hero-slide" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75)), url('images/doisongbandia.png');"></div>
+        </div>
+
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
             <div class="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white/15 backdrop-blur-md text-xs sm:text-sm font-medium mb-6 border border-white/20 shadow-xl">
                 <span>⛰️</span> <span data-i18n="hero_badge">Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng</span>
@@ -89,13 +110,20 @@
                 Nơi lưu giữ bức tượng gà 9 cựa khổng lồ, đậm đà bản sắc văn hóa đại ngàn Tây Nguyên của đồng bào K'Ho.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#truyen-thuyet" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-2xl shadow-2xl shadow-amber-600/40 transition-all duration-300 transform hover:-translate-y-1" data-i18n="hero_btn_1">
-                    Đọc truyền thuyết
+                <a href="#tour-leo-nui" class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-2xl shadow-2xl shadow-amber-600/40 transition-all duration-300 transform hover:-translate-y-1" data-i18n="hero_btn_1">
+                    Khám phá Tour Núi Voi
                 </a>
                 <a href="#thu-vien" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-4 rounded-2xl transition-all duration-300" data-i18n="hero_btn_2">
                     Xem Thư Viện Ảnh
                 </a>
             </div>
+        </div>
+
+        <div id="hero-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+            <button onclick="goToSlide(0)" class="hero-dot w-8 h-2 rounded-full bg-amber-400 transition-all duration-300" aria-label="Slide 1"></button>
+            <button onclick="goToSlide(1)" class="hero-dot w-2.5 h-2 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300" aria-label="Slide 2"></button>
+            <button onclick="goToSlide(2)" class="hero-dot w-2.5 h-2 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300" aria-label="Slide 3"></button>
+            <button onclick="goToSlide(3)" class="hero-dot w-2.5 h-2 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300" aria-label="Slide 4"></button>
         </div>
     </section>
 
@@ -128,17 +156,140 @@
         </div>
     </section>
 
+    <!-- CHUYÊN MỤC TOUR LEO NÚI VOI -->
+    <section id="tour-leo-nui" class="py-24 bg-gradient-to-b from-amber-50/70 to-stone-100/80 px-4 sm:px-6 lg:px-8 border-y border-amber-200/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-4 rounded-full bg-amber-100 text-amber-800 text-xs font-bold tracking-widest uppercase mb-3" data-i18n="tour_tag">
+                    🥾 Trekking & Khám Phá Thiên Nhiên
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4" data-i18n="tour_title">
+                    Hành Trình Leo Núi Voi & Làng Gà Darahoa
+                </h2>
+                <p class="text-slate-600 text-base max-w-2xl mx-auto font-light" data-i18n="tour_subtitle">
+                    Tổng hợp cẩm nang trekking chinh phục đỉnh Núi Voi cao 1.756m xuất phát từ Làng Gà – cung đường rừng thông nguyên sinh tuyệt đẹp bậc nhất Nam Tây Nguyên.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Bài viết 1 -->
+                <article class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-stone-200/60 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="images/canhquanthiennhien.png" alt="Trekking Núi Voi" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Cung Trekking Phổ Biến</span>
+                    </div>
+                    <div class="p-7 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-3"><span>⏱️ 1 Ngày</span><span>•</span><span>⛰️ Độ cao 1.756m</span></div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug" data-i18n="art_1_title">Chinh Phục Đỉnh Núi Voi Từ Làng Gà: Xuyên Rừng Thông Cổ Thụ</h3>
+                            <p class="text-slate-600 text-sm font-light leading-relaxed mb-6" data-i18n="art_1_excerpt">Bắt đầu từ biểu tượng Gà 9 cựa tại thôn Darahoa, hành trình đưa bạn băng qua những trảng cỏ xanh mướt, rừng thông ba lá trăm tuổi...</p>
+                        </div>
+                        <button onclick="openArticleModal(0)" class="text-amber-600 hover:text-amber-700 font-bold text-sm flex items-center gap-1 transition" data-i18n="btn_read_more">Đọc chi tiết bài viết →</button>
+                    </div>
+                </article>
+
+                <!-- Bài viết 2 -->
+                <article class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-stone-200/60 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="images/tuongga.png" alt="Làng Gà Núi Voi" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Văn Hóa & Sử Thi</span>
+                    </div>
+                    <div class="p-7 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-3"><span>🥾 Mức độ: Trung bình</span><span>•</span><span>📍 Làng Darahoa</span></div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug" data-i18n="art_2_title">Tour Trải Nghiệm Làng Gà – Tảng Đá Voi Phục & Rừng Rêu Huyền Bí</h3>
+                            <p class="text-slate-600 text-sm font-light leading-relaxed mb-6" data-i18n="art_2_excerpt">Sự kết hợp hoàn hảo giữa tham quan buôn làng K'Ho truyền thống, nghe kể chuyện tình K'Tien – H'Bia và trekking khám phá đá voi...</p>
+                        </div>
+                        <button onclick="openArticleModal(1)" class="text-amber-600 hover:text-amber-700 font-bold text-sm flex items-center gap-1 transition" data-i18n="btn_read_more">Đọc chi tiết bài viết →</button>
+                    </div>
+                </article>
+
+                <!-- Bài viết 3 -->
+                <article class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-stone-200/60 flex flex-col">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="images/doisongbandia.png" alt="Cẩm nang leo núi" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">Cẩm Nang Du Lịch</span>
+                    </div>
+                    <div class="p-7 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-3"><span>🎒 Kinh nghiệm thực tế</span><span>•</span><span>👥 Hướng dẫn viên bản địa</span></div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug" data-i18n="art_3_title">Kinh Nghiệm Leo Núi Voi & Giao Lưu Ẩm Thực K'Ho Tại Làng Gà</h3>
+                            <p class="text-slate-600 text-sm font-light leading-relaxed mb-6" data-i18n="art_3_excerpt">Cần chuẩn bị gì trước chuyến đi? Thời điểm săn mây đẹp nhất trên đỉnh Núi Voi và thưởng thức cơm lam, gà nướng, rượu cần...</p>
+                        </div>
+                        <button onclick="openArticleModal(2)" class="text-amber-600 hover:text-amber-700 font-bold text-sm flex items-center gap-1 transition" data-i18n="btn_read_more">Đọc chi tiết bài viết →</button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- CTA Đặt Tour -->
+            <div class="mt-14 bg-slate-900 rounded-3xl p-8 sm:p-10 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+                <div class="max-w-2xl text-center lg:text-left">
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest block mb-2" data-i18n="cta_tag">Trải Nghiệm An Toàn & Bản Sắc</span>
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="cta_title">Bạn Muốn Tham Gia Tour Leo Núi Voi Cùng Hướng Dẫn Viên Bản Địa?</h3>
+                    <p class="text-stone-300 text-sm font-light leading-relaxed" data-i18n="cta_desc">Kết nối trực tiếp với đội ngũ người dân K'Ho tại Làng Gà Darahoa để được dẫn đường an toàn và thưởng thức ẩm thực núi rừng.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+                    <a href="https://m.me/474444319994591" target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-4 rounded-2xl shadow-lg transition flex items-center gap-2 text-sm"><span>💬</span> <span data-i18n="cta_btn_msg">Đăng ký qua Messenger</span></a>
+                    <a href="https://www.facebook.com/Chickenvillagedalat" target="_blank" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-4 rounded-2xl transition text-sm" data-i18n="cta_btn_fb">Xem lịch trình trên Facebook</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GÓC CẨM NANG & BÀI VIẾT THAM KHẢO -->
+    <section id="bai-viet" class="py-20 bg-white px-4 sm:px-6 lg:px-8 border-b border-stone-200/60">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-2 block" data-i18n="blog_tag">📖 Góc Cẩm Nang Du Lịch</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-i18n="blog_title">Bài Viết Tham Khảo Về Làng Gà</h2>
+                </div>
+                <p class="text-slate-500 text-sm max-w-md font-light" data-i18n="blog_sub">Những thông tin hữu ích giúp chuyến tham quan Làng Gà Darahoa và khám phá vùng đất Đức Trọng của bạn thêm trọn vẹn.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Bài 4 -->
+                <div class="group bg-stone-50 rounded-3xl p-6 border border-stone-200/60 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-4"><span class="bg-amber-100 text-amber-800 font-semibold px-3 py-1 rounded-full">Di chuyển</span><span>3 phút đọc</span></div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition" data-i18n="ref_1_title">Hướng Dẫn Đường Đi Đến Làng Gà Darahoa Từ Đà Lạt & Sân Bay Liên Khương</h3>
+                        <p class="text-slate-600 text-sm font-light leading-relaxed mb-6" data-i18n="ref_1_desc">Chỉ cách sân bay Liên Khương 10km và trung tâm Đà Lạt 20km dọc Quốc lộ 20, Làng Gà là điểm dừng chân cực kỳ thuận tiện...</p>
+                    </div>
+                    <button onclick="openArticleModal(3)" class="text-left text-sm font-bold text-slate-900 group-hover:text-amber-600 transition flex items-center gap-2" data-i18n="btn_read_more">Đọc chi tiết bài viết →</button>
+                </div>
+
+                <!-- Bài 5 -->
+                <div class="group bg-stone-50 rounded-3xl p-6 border border-stone-200/60 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-4"><span class="bg-emerald-100 text-emerald-800 font-semibold px-3 py-1 rounded-full">Văn hóa bản địa</span><span>4 phút đọc</span></div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition" data-i18n="ref_2_title">Nét Độc Đáo Trong Chế Độ Mẫu Hệ & Nghệ Thuật Dệt Thổ Cẩm K'Ho Chil</h3>
+                        <p class="text-slate-600 text-sm font-light leading-relaxed mb-6" data-i18n="ref_2_desc">Tìm hiểu phong tục "bắt chồng" độc đáo, ý nghĩa những hoa văn tinh xảo trên tấm thổ cẩm và đời sống gắn bó với rừng già...</p>
+                    </div>
+                    <button onclick="openArticleModal(4)" class="text-left text-sm font-bold text-slate-900 group-hover:text-amber-600 transition flex items-center gap-2" data-i18n="btn_read_more">Đọc chi tiết bài viết →</button>
+                </div>
+
+                <!-- Bài 6 -->
+                <div class="group bg-stone-50 rounded-3xl p-6 border border-stone-200/60 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-4"><span class="bg-sky-100 text-sky-800 font-semibold px-3 py-1 rounded-full">Lịch trình</span><span>5 phút đọc</span></div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 group-hover:text-amber-600 transition" data-i18n="ref_3_title">Gợi Ý Lịch Trình 1 Ngày Khám Phá Cụm Du Lịch Đức Trọng – Nam Đà Lạt</h3>
+                        <p class="text-slate-600 text-sm font-light leading-relaxed mb-6" data-i18n="ref_3_desc">Kết hợp tham quan Làng Gà Darahoa, check-in Đồi Chè Cầu Đất, Thác Pongour và thưởng thức đặc sản trong ngày...</p>
+                    </div>
+                    <button onclick="openArticleModal(5)" class="text-left text-sm font-bold text-slate-900 group-hover:text-amber-600 transition flex items-center gap-2" data-i18n="btn_read_more">Đọc chi tiết bài viết →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Thư Viện Ảnh & 2 Video YouTube -->
-    <section id="thu-vien" class="py-20 bg-stone-100/80 px-4 sm:px-6 lg:px-8">
+    <section id="thu-vien" class="py-20 bg-stone-50 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-2 block" data-i18n="lib_tag">Thư Viện Đa Phương Tiện</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-i18n="lib_title">Không gian Làng Gà qua Video & Ảnh</h2>
             </div>
 
-            <!-- LƯỚI 2 VIDEO YOUTUBE ĐẶT CẠNH NHAU -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                
                 <!-- Video 1 -->
                 <div class="bg-white p-6 rounded-3xl shadow-lg border border-stone-200/60 flex flex-col">
                     <h3 class="text-lg font-bold text-slate-900 mb-3" data-i18n="vid_1_title">Khám phá Làng Gà Darahoa</h3>
@@ -147,46 +298,27 @@
                     </div>
                 </div>
 
-                <!-- Video 2 (Đã cập nhật ID 81p7I6Ka0Z0) -->
+                <!-- Video 2 (Tự động chạy) -->
                 <div class="bg-white p-6 rounded-3xl shadow-lg border border-stone-200/60 flex flex-col">
                     <h3 class="text-lg font-bold text-slate-900 mb-3" data-i18n="vid_2_title">Trải nghiệm Văn Hóa & Du Lịch</h3>
                     <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md bg-slate-900">
-                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/81p7I6Ka0Z0" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/81p7I6Ka0Z0?autoplay=1&mute=1&loop=1&playlist=81p7I6Ka0Z0" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Image Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-stone-200/50 flex flex-col">
-                    <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/tuongga.png" alt="Tượng Gà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-i18n="img_1_title">Tượng Gà Khổng Lồ</h4>
-                        <p class="text-slate-500 text-xs font-light" data-i18n="img_1_desc">Biểu tượng tự hào của đồng bào K'Ho</p>
-                    </div>
+                    <div class="relative overflow-hidden aspect-[4/3]"><img src="images/tuongga.png" alt="Tượng Gà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                    <div class="p-6"><h4 class="text-lg font-bold text-slate-900 mb-1" data-i18n="img_1_title">Tượng Gà Khổng Lồ</h4><p class="text-slate-500 text-xs font-light" data-i18n="img_1_desc">Biểu tượng tự hào của đồng bào K'Ho</p></div>
                 </div>
-
                 <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-stone-200/50 flex flex-col">
-                    <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/doisongbandia.png" alt="Đời sống" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-i18n="img_2_title">Đời Sống Bản Địa</h4>
-                        <p class="text-slate-500 text-xs font-light" data-i18n="img_2_desc">Nhà cửa và nếp sống mộc mạc</p>
-                    </div>
+                    <div class="relative overflow-hidden aspect-[4/3]"><img src="images/doisongbandia.png" alt="Đời sống" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                    <div class="p-6"><h4 class="text-lg font-bold text-slate-900 mb-1" data-i18n="img_2_title">Đời Sống Bản Địa</h4><p class="text-slate-500 text-xs font-light" data-i18n="img_2_desc">Nhà cửa và nếp sống mộc mạc</p></div>
                 </div>
-
                 <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-stone-200/50 flex flex-col">
-                    <div class="relative overflow-hidden aspect-[4/3]">
-                        <img src="images/canhquanthiennhien.png" alt="Cảnh quan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1" data-i18n="img_3_title">Cảnh Quan Thiên Nhiên</h4>
-                        <p class="text-slate-500 text-xs font-light" data-i18n="img_3_desc">Không gian xanh mát dưới chân núi Voi</p>
-                    </div>
+                    <div class="relative overflow-hidden aspect-[4/3]"><img src="images/canhquanthiennhien.png" alt="Cảnh quan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
+                    <div class="p-6"><h4 class="text-lg font-bold text-slate-900 mb-1" data-i18n="img_3_title">Cảnh Quan Thiên Nhiên</h4><p class="text-slate-500 text-xs font-light" data-i18n="img_3_desc">Không gian xanh mát dưới chân núi Voi</p></div>
                 </div>
             </div>
         </div>
@@ -197,12 +329,9 @@
         <div class="text-center mb-12">
             <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-2 block" data-i18n="rev_tag">Google Maps Reviews</span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3" data-i18n="rev_title">Trải Nghiệm Thực Tế Từ Khách Du Lịch</h2>
-            <p class="text-slate-600 text-sm max-w-xl mx-auto font-light" data-i18n="rev_desc">
-                Đánh giá thời gian thực được đồng bộ tự động trực tiếp từ Google Maps của Làng Gà Darahoa.
-            </p>
+            <p class="text-slate-600 text-sm max-w-xl mx-auto font-light" data-i18n="rev_desc">Đánh giá thời gian thực được đồng bộ tự động trực tiếp từ Google Maps của Làng Gà Darahoa.</p>
         </div>
 
-        <!-- Elfsight Google Reviews Widget -->
         <div class="elfsight-app-e465141d-0784-4486-81ab-bfe976ac2833" data-elfsight-app-lazy></div>
         
         <div class="text-center mt-10">
@@ -216,31 +345,23 @@
     <footer id="lien-he" class="bg-slate-900 text-stone-300 pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
             <div>
-                <h3 class="text-white font-bold text-xl mb-4 flex items-center gap-2">
-                    <span>🐓</span> <span data-i18n="footer_title">Khu Du Lịch Làng Gà Darahoa</span>
-                </h3>
-                <p class="text-stone-400 text-sm leading-relaxed mb-4" data-i18n="footer_address">
-                    📍 Địa chỉ: Thôn Đarahoa, Xã Hiệp Thạnh, Huyện Đức Trọng, Tỉnh Lâm Đồng (Dưới chân núi Voi hùng vĩ).
-                </p>
+                <h3 class="text-white font-bold text-xl mb-4 flex items-center gap-2"><span>🐓</span> <span data-i18n="footer_title">Khu Du Lịch Làng Gà Darahoa</span></h3>
+                <p class="text-stone-400 text-sm leading-relaxed mb-4" data-i18n="footer_address">📍 Địa chỉ: Thôn Đarahoa, Xã Hiệp Thạnh, Huyện Đức Trọng, Tỉnh Lâm Đồng.</p>
                 <p class="text-stone-400 text-sm mb-2">📞 Hotline: Update</p>
                 <p class="text-stone-400 text-sm mb-6">📧 Email: endola247@hotmail.com</p>
-                
                 <div class="flex flex-wrap items-center gap-3">
-                    <a href="https://www.facebook.com/Chickenvillagedalat" target="_blank" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition shadow-md flex items-center gap-2">
-                        <span>👍 Facebook Page</span>
-                    </a>
-                    <a href="https://m.me/474444319994591" target="_blank" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold transition shadow-md flex items-center gap-2">
-                        <span>💬 Messenger</span>
-                    </a>
+                    <a href="https://www.facebook.com/Chickenvillagedalat" target="_blank" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition shadow-md flex items-center gap-2"><span>👍 Facebook Page</span></a>
+                    <a href="https://m.me/474444319994591" target="_blank" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold transition shadow-md flex items-center gap-2"><span>💬 Messenger</span></a>
                 </div>
             </div>
 
             <div>
                 <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4" data-i18n="footer_links_title">Điều Hướng Nhanh</h4>
                 <ul class="space-y-2.5 text-sm text-stone-400">
-                    <li><a href="#gioi-thieu" class="hover:text-amber-400 transition" data-i18n="nav_about">Giới Thiệu</a></li>
                     <li><a href="#truyen-thuyet" class="hover:text-amber-400 transition" data-i18n="nav_legend">Truyền Thuyết</a></li>
                     <li><a href="#trai-nghiem" class="hover:text-amber-400 transition" data-i18n="nav_exp">Trải Nghiệm</a></li>
+                    <li><a href="#tour-leo-nui" class="hover:text-amber-400 transition" data-i18n="nav_tour">Tour Núi Voi</a></li>
+                    <li><a href="#bai-viet" class="hover:text-amber-400 transition" data-i18n="nav_blog">Cẩm Nang</a></li>
                     <li><a href="#thu-vien" class="hover:text-amber-400 transition" data-i18n="nav_lib">Thư Viện</a></li>
                     <li><a href="#danh-gia" class="hover:text-amber-400 transition" data-i18n="nav_reviews">Đánh Giá</a></li>
                 </ul>
@@ -249,50 +370,217 @@
             <div>
                 <div class="flex items-center justify-between mb-4">
                     <h4 class="text-white font-bold text-sm uppercase tracking-wider" data-i18n="footer_map_title">Bản Đồ Chỉ Đường</h4>
-                    <a href="https://maps.app.goo.gl/VyS5paCb2Pw6vStN6" target="_blank" class="text-xs bg-amber-600 hover:bg-amber-700 text-white font-semibold px-3 py-1.5 rounded-lg transition shadow">
-                        🗺️ Google Maps
-                    </a>
+                    <a href="https://maps.app.goo.gl/VyS5paCb2Pw6vStN6" target="_blank" class="text-xs bg-amber-600 hover:bg-amber-700 text-white font-semibold px-3 py-1.5 rounded-lg transition shadow">🗺️ Google Maps</a>
                 </div>
-                
                 <div class="w-full rounded-2xl overflow-hidden border border-slate-700 shadow-md">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3905.379726359536!2d108.43504951129158!3d11.808656488361596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31713ffae90e9fed%3A0xdc04fc133d40922b!2sChicken%20Village%20(L%C3%A0ng%20Con%20G%C3%A0)!5e0!3m2!1svi!2s!4v1789167338465!5m2!1svi!2s" width="100%" height="210" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </div>
-
-        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-xs text-stone-500">
-            &copy; 2026 Làng Gà Darahoa. Thiết kế quảng bá du lịch địa phương.
-        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-xs text-stone-500">&copy; 2026 Làng Gà Darahoa. Thiết kế quảng bá du lịch địa phương.</div>
     </footer>
 
-    <!-- Script Đa Ngôn Ngữ -->
+    <!-- POPUP ĐỌC CHI TIẾT 6 BÀI VIẾT -->
+    <div id="articleModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/75 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-stone-200 animate-fade-in">
+            <div class="sticky top-0 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-stone-100 flex items-center justify-between z-10">
+                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Cẩm Nang Du Lịch Làng Gà – Núi Voi</span>
+                <button onclick="closeArticleModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-slate-600 flex items-center justify-center font-bold transition">✕</button>
+            </div>
+            <div class="p-6 sm:p-8">
+                <img id="modalImg" src="" alt="" class="w-full h-60 object-cover rounded-2xl mb-6 shadow-md">
+                <h3 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 leading-tight"></h3>
+                <div id="modalBody" class="text-slate-600 text-sm sm:text-base font-light leading-relaxed space-y-4"></div>
+                <div class="mt-8 pt-6 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <span class="text-xs text-slate-500">Bạn muốn trải nghiệm cung đường này?</span>
+                    <a href="https://m.me/474444319994591" target="_blank" class="w-full sm:w-auto text-center bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-xl shadow transition text-sm">💬 Nhắn tin đặt lịch ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT CHỨC NĂNG -->
     <script>
+        // 1. Slide Ảnh Bìa
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.hero-dot');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('w-2.5', 'bg-white/40');
+                    dot.classList.add('w-8', 'bg-amber-400');
+                } else {
+                    dot.classList.remove('w-8', 'bg-amber-400');
+                    dot.classList.add('w-2.5', 'bg-white/40');
+                }
+            });
+            currentSlide = index;
+        }
+
+        function nextSlide() { showSlide((currentSlide + 1) % slides.length); }
+        function goToSlide(index) {
+            clearInterval(slideInterval);
+            showSlide(index);
+            slideInterval = setInterval(nextSlide, 4500);
+        }
+        slideInterval = setInterval(nextSlide, 4500);
+
+        // 2. Dữ liệu 6 bài viết chi tiết cho Popup
+        const fullArticles = [
+            {
+                img: "images/canhquanthiennhien.png",
+                title: "Chinh Phục Đỉnh Núi Voi Từ Làng Gà: Xuyên Rừng Thông Cổ Thụ",
+                content: `
+                    <p><strong>Núi Voi (Lâm Đồng)</strong> cao 1.756m so với mực nước biển, nằm ngay phía sau Làng Gà Darahoa (xã Hiệp Thạnh, huyện Đức Trọng). Đây là một trong những cung đường trekking nguyên sơ và gần Đà Lạt nhất.</p>
+                    <p><strong>Lịch trình gợi ý (1 ngày):</strong></p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>07:30:</strong> Tập trung tại Tượng Gà 9 Cựa (Làng Darahoa), nghe giới thiệu về truyền thuyết K'Ho và khởi động.</li>
+                        <li><strong>08:30:</strong> Bắt đầu leo dốc qua những đồi thông ba lá cổ thụ, băng qua thảm thực vật rừng nhiệt đới xanh mát và những gốc cây phủ đầy rêu phong.</li>
+                        <li><strong>11:30:</strong> Chạm đỉnh Núi Voi – chiêm ngưỡng tầm nhìn 360 độ bao quát hồ Tuyền Lâm, đèo Prenn và thung lũng Đức Trọng.</li>
+                        <li><strong>12:30:</strong> Nghỉ ngơi, dùng bữa trưa dã ngoại với cơm lam, gà nướng bản địa giữa rừng.</li>
+                        <li><strong>15:30:</strong> Xuống núi trở về Làng Gà, tham quan làng nghề dệt thổ cẩm truyền thống.</li>
+                    </ul>
+                `
+            },
+            {
+                img: "images/tuongga.png",
+                title: "Tour Trải Nghiệm Làng Gà – Tảng Đá Voi Phục & Rừng Rêu Huyền Bí",
+                content: `
+                    <p>Nếu bạn không muốn leo lên tới đỉnh cao nhất mà thích một hành trình nhẹ nhàng kết hợp khám phá văn hóa bản địa, tuyến trekking <strong>Làng Gà – Đá Voi Phục</strong> là lựa chọn tuyệt vời.</p>
+                    <p><strong>Điểm nhấn nổi bật:</strong></p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Check-in Làng Darahoa:</strong> Tìm hiểu kiến trúc nhà truyền thống, khung dệt thổ cẩm thủ công của phụ nữ K'Ho.</li>
+                        <li><strong>Khám phá Đá Voi:</strong> Đi bộ xuyên rừng khoảng 2 tiếng để đến với những khối đá hoa cương khổng lồ mang hình dáng chú voi đang nằm phủ phục giữa đại ngàn.</li>
+                        <li><strong>Rừng rêu nguyên sinh:</strong> Khu vực lưng chừng núi quanh năm sương mù bao phủ tạo nên thảm rêu xanh mướt trên thân cây cổ thụ, cực kỳ lý tưởng cho các tín đồ nhiếp ảnh.</li>
+                    </ul>
+                `
+            },
+            {
+                img: "images/doisongbandia.png",
+                title: "Kinh Nghiệm Leo Núi Voi & Giao Lưu Ẩm Thực K'Ho Tại Làng Gà",
+                content: `
+                    <p>Để chuyến leo núi Voi từ Làng Gà diễn ra trọn vẹn và an toàn, du khách nên lưu ý một số kinh nghiệm thực tế sau:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Thời điểm đẹp nhất:</strong> Từ tháng 11 đến tháng 4 năm sau (mùa khô Tây Nguyên), trời trong xanh, nắng ấm và dễ săn mây vào sáng sớm.</li>
+                        <li><strong>Trang phục & vật dụng:</strong> Giày leo núi có độ bám tốt, áo khoác gió nhẹ, mũ, kem chống nắng, ít nhất 1.5 lít nước uống và đồ ăn nhẹ.</li>
+                        <li><strong>Đi cùng người dẫn đường bản địa:</strong> Đường mòn trong rừng Núi Voi có nhiều ngã rẽ. Việc đi cùng hướng dẫn viên người K'Ho giúp bạn đi đúng tuyến an toàn và nghe nhiều câu chuyện thú vị về cây thuốc rừng.</li>
+                        <li><strong>Ẩm thực bản địa:</strong> Đừng quên đặt trước bữa tối giao lưu cồng chiêng, thưởng thức rượu cần và gà nướng cơm lam ngay tại làng sau khi xuống núi!</li>
+                    </ul>
+                `
+            },
+            {
+                img: "images/banner.jpg",
+                title: "Hướng Dẫn Đường Đi Đến Làng Gà Darahoa Từ Đà Lạt & Sân Bay Liên Khương",
+                content: `
+                    <p><strong>Làng Gà Darahoa</strong> tọa lạc ngay gần trục Quốc lộ 20, thuộc xã Hiệp Thạnh, huyện Đức Trọng, tỉnh Lâm Đồng – vị trí cửa ngõ rất dễ tìm và thuận tiện di chuyển.</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Từ Sân bay Liên Khương (khoảng 10 km – 15 phút):</strong> Đi theo hướng Quốc lộ 20 lên Đà Lạt, qua ngã ba Finom khoảng 3 km sẽ thấy cổng chào và biển chỉ dẫn vào thôn Darahoa (Làng Gà) bên chân Núi Voi.</li>
+                        <li><strong>Từ Trung tâm Đà Lạt (khoảng 20 km – 30 phút):</strong> Chạy thẳng xuống hết đèo Prenn, tiếp tục đi dọc Quốc lộ 20 về hướng Đức Trọng khoảng 7 km là tới lối rẽ vào làng.</li>
+                        <li><strong>Phương tiện:</strong> Đường nhựa bằng phẳng, xe máy, ô tô con hoặc xe du lịch lớn đều có thể vào tận khu vực Tượng Gà 9 Cựa.</li>
+                    </ul>
+                `
+            },
+            {
+                img: "images/detthocam.png",
+                title: "Nét Độc Đáo Trong Chế Độ Mẫu Hệ & Nghệ Thuật Dệt Thổ Cẩm K'Ho Chil",
+                content: `
+                    <p>Đồng bào K'Ho sinh sống dưới chân Núi Voi (nhánh K'Ho Chil) vẫn lưu giữ nguyên vẹn nhiều giá trị văn hóa truyền thống đặc sắc của vùng Nam Tây Nguyên.</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Chế độ mẫu hệ:</strong> Trong gia đình người K'Ho, người phụ nữ giữ vai trò chủ chốt, con cái mang họ mẹ và người con gái chủ động đi hỏi chồng (tục bắt chồng).</li>
+                        <li><strong>Nghề dệt thổ cẩm thủ công:</strong> Nghệ nhân tại làng sử dụng khung dệt bằng tre gỗ truyền thống, nhuộm màu tự nhiên từ vỏ cây và lá rừng để tạo nên những hoa văn thổ cẩm tinh xảo.</li>
+                        <li><strong>Không gian cồng chiêng:</strong> Vào các dịp lễ hội, tiếng chiêng hòa cùng men rượu cần tạo nên sức hút khó quên cho du khách phương xa.</li>
+                    </ul>
+                `
+            },
+            {
+                img: "images/canhquanthiennhien.png",
+                title: "Gợi Ý Lịch Trình 1 Ngày Khám Phá Cụm Du Lịch Đức Trọng – Nam Đà Lạt",
+                content: `
+                    <p>Nếu bạn có quỹ thời gian 1 ngày khám phá cung đường phía Nam Đà Lạt, hãy tham khảo lịch trình kết hợp cực kỳ hợp lý dưới đây:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>08:00 – 10:30 (Làng Gà Darahoa & Chân Núi Voi):</strong> Check-in Tượng Gà 9 Cựa, tham quan xưởng dệt thổ cẩm, dạo bộ dưới tán thông chân Núi Voi.</li>
+                        <li><strong>11:00 – 13:30 (Khu vực Liên Nghĩa – Đức Trọng):</strong> Thưởng thức ẩm thực cao nguyên (gà nướng cơm lam, lẩu gà lá é...).</li>
+                        <li><strong>14:00 – 16:30 (Thác Pongour hoặc Hồ Tuyền Lâm):</strong> Di chuyển tham quan "Nam Thiên Đệ Nhất Thác" Pongour hoặc quay ngược lên đèo Prenn ngắm hoàng hôn Hồ Tuyền Lâm.</li>
+                    </ul>
+                `
+            }
+        ];
+
+        function openArticleModal(index) {
+            const art = fullArticles[index];
+            document.getElementById('modalImg').src = art.img;
+            document.getElementById('modalTitle').innerText = art.title;
+            document.getElementById('modalBody').innerHTML = art.content;
+            const modal = document.getElementById('articleModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeArticleModal() {
+            const modal = document.getElementById('articleModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        document.getElementById('articleModal').addEventListener('click', function(e) {
+            if (e.target === this) closeArticleModal();
+        });
+
+        // 3. Đa Ngôn Ngữ
         const translations = {
             vi: {
                 meta_title: "Khám Phá Làng Con Gà - Vẻ Đẹp Dưới Chân Núi Voi",
                 nav_sub: "Du Lịch Văn Hóa K'Ho",
-                nav_about: "Giới thiệu",
                 nav_legend: "Truyền thuyết",
                 nav_exp: "Trải nghiệm",
-                nav_lib: "Thư viện ảnh",
-                nav_reviews: "Đánh giá thực tế",
-                nav_contact: "Liên hệ",
-                btn_book: "Khám phá ngay",
-                hero_badge: "⛰️ Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng",
+                nav_tour: "Tour Núi Voi",
+                nav_blog: "Cẩm nang",
+                nav_lib: "Thư viện",
+                nav_reviews: "Đánh giá",
+                btn_book: "Đặt Tour Ngay",
+                hero_badge: "Dưới chân núi Voi hùng vĩ, Đức Trọng, Lâm Đồng",
                 hero_title_1: "Khám Phá Vẻ Đẹp",
                 hero_title_2: "Làng Gà Darahoa",
                 hero_desc: "Nơi lưu giữ bức tượng gà 9 cựa khổng lồ, đậm đà bản sắc văn hóa đại ngàn Tây Nguyên của đồng bào K'Ho.",
-                hero_btn_1: "Đọc truyền thuyết",
+                hero_btn_1: "Khám phá Tour Núi Voi",
                 hero_btn_2: "Xem Thư Viện Ảnh",
                 story_tag: "Câu chuyện sử thi",
                 story_title: "Truyền thuyết về chú Gà 9 cựa",
-                story_desc: "Cái tên làng Gà gắn liền với câu chuyện tình yêu cảm động giữa nàng H'Bia và chàng K'Tien. Vì những thách cưới ngặt nghèo (trong đó có gà 9 cựa), đôi trẻ đã kiệt sức và hóa thân vào đại ngàn. Bức tượng gà trống 9 cựa cao lớn sừng sững giữa làng được dựng lên như một biểu tượng của sự thủy chung và khát vọng tự do.",
+                story_desc: "Cái tên làng Gà gắn liền với câu chuyện tình yêu cảm động giữa nàng H'Bia và chàng K'Tien. Vì những thách cưới ngặt nghèo (trong đó có gà 9 cựa), đôi trẻ đã kiệt sức và hóa thân vào đại ngàn.",
                 feat_1_title: "Tượng Gà 9 Cựa",
-                feat_1_desc: "Công trình biểu tượng cao 3.2m nặng 8 tấn được thiết kế từ năm 1978, ghi dấu ấn sâu đậm trong lòng du khách.",
+                feat_1_desc: "Công trình biểu tượng cao 3.2m nặng 8 tấn được thiết kế từ năm 1978.",
                 feat_2_title: "Dệt Thổ Cẩm",
-                feat_2_desc: "Trải nghiệm quan sát những khung dệt thủ công truyền thống và sự khéo léo của các thiếu nữ đồng bào K'Ho.",
+                feat_2_desc: "Trải nghiệm quan sát khung dệt thủ công truyền thống của phụ nữ K'Ho.",
                 feat_3_title: "Văn Hóa Cồng Chiêng",
-                feat_3_desc: "Hòa mình vào không gian sinh hoạt cộng đồng, thưởng thức hương vị rượu cần nồng ấm giữa núi rừng.",
+                feat_3_desc: "Hòa mình vào không gian cộng đồng, thưởng thức hương vị rượu cần.",
+                tour_tag: "🥾 Trekking & Khám Phá Thiên Nhiên",
+                tour_title: "Hành Trình Leo Núi Voi & Làng Gà Darahoa",
+                tour_subtitle: "Tổng hợp cẩm nang trekking chinh phục đỉnh Núi Voi cao 1.756m xuất phát từ Làng Gà.",
+                art_1_title: "Chinh Phục Đỉnh Núi Voi Từ Làng Gà: Xuyên Rừng Thông Cổ Thụ",
+                art_1_excerpt: "Bắt đầu từ biểu tượng Gà 9 cựa tại thôn Darahoa, hành trình đưa bạn băng qua rừng thông ba lá trăm tuổi...",
+                art_2_title: "Tour Trải Nghiệm Làng Gà – Tảng Đá Voi Phục & Rừng Rêu Huyền Bí",
+                art_2_excerpt: "Sự kết hợp hoàn hảo giữa tham quan buôn làng K'Ho và trekking nhẹ nhàng khám phá đá voi...",
+                art_3_title: "Kinh Nghiệm Leo Núi Voi & Giao Lưu Ẩm Thực K'Ho Tại Làng Gà",
+                art_3_excerpt: "Cần chuẩn bị gì trước chuyến đi? Thời điểm săn mây đẹp nhất trên đỉnh Núi Voi và thưởng thức ẩm thực...",
+                btn_read_more: "Đọc chi tiết bài viết →",
+                blog_tag: "📖 Góc Cẩm Nang Du Lịch",
+                blog_title: "Bài Viết Tham Khảo Về Làng Gà",
+                blog_sub: "Những thông tin hữu ích giúp chuyến tham quan Làng Gà Darahoa của bạn thêm trọn vẹn.",
+                ref_1_title: "Hướng Dẫn Đường Đi Đến Làng Gà Darahoa Từ Đà Lạt & Sân Bay Liên Khương",
+                ref_1_desc: "Chỉ cách sân bay Liên Khương 10km và trung tâm Đà Lạt 20km dọc Quốc lộ 20...",
+                ref_2_title: "Nét Độc Đáo Trong Chế Độ Mẫu Hệ & Nghệ Thuật Dệt Thổ Cẩm K'Ho Chil",
+                ref_2_desc: "Tìm hiểu phong tục bắt chồng, ý nghĩa hoa văn thổ cẩm và đời sống gắn bó với rừng già...",
+                ref_3_title: "Gợi Ý Lịch Trình 1 Ngày Khám Phá Cụm Du Lịch Đức Trọng – Nam Đà Lạt",
+                ref_3_desc: "Kết hợp tham quan Làng Gà Darahoa, check-in Đồi Chè Cầu Đất, Thác Pongour...",
+                cta_tag: "Trải Nghiệm An Toàn & Bản Sắc",
+                cta_title: "Bạn Muốn Tham Gia Tour Leo Núi Voi Cùng Hướng Dẫn Viên Bản Địa?",
+                cta_desc: "Kết nối trực tiếp với đội ngũ người dân K'Ho tại Làng Gà Darahoa để được dẫn đường an toàn.",
+                cta_btn_msg: "Đăng ký qua Messenger",
+                cta_btn_fb: "Xem lịch trình trên Facebook",
                 lib_tag: "Thư Viện Đa Phương Tiện",
                 lib_title: "Không gian Làng Gà qua Video & Ảnh",
                 vid_1_title: "Khám phá Làng Gà Darahoa",
@@ -305,7 +593,7 @@
                 img_3_desc: "Không gian xanh mát dưới chân núi Voi",
                 rev_tag: "Google Maps Reviews",
                 rev_title: "Trải Nghiệm Thực Tế Từ Khách Du Lịch",
-                rev_desc: "Đánh giá thời gian thực được đồng bộ tự động trực tiếp từ Google Maps của Làng Gà Darahoa.",
+                rev_desc: "Đánh giá thời gian thực được đồng bộ tự động trực tiếp từ Google Maps.",
                 rev_btn: "Xem chi tiết trên Google Maps",
                 footer_title: "Khu Du Lịch Làng Gà Darahoa",
                 footer_address: "📍 Địa chỉ: Thôn Đarahoa, Xã Hiệp Thạnh, Huyện Đức Trọng, Tỉnh Lâm Đồng.",
@@ -313,30 +601,54 @@
                 footer_map_title: "Bản Đồ Chỉ Đường"
             },
             en: {
-                meta_title: "Discover Chicken Village - Elephant Mountain's Beauty",
+                meta_title: "Discover Chicken Village - Elephant Mountain Trekking & Culture",
                 nav_sub: "K'Ho Cultural Tourism",
-                nav_about: "About",
                 nav_legend: "Legend",
                 nav_exp: "Experiences",
+                nav_tour: "Elephant Mt.",
+                nav_blog: "Guides",
                 nav_lib: "Gallery",
-                nav_reviews: "Real Reviews",
-                nav_contact: "Contact",
-                btn_book: "Explore Now",
-                hero_badge: "⛰️ At the foot of majestic Elephant Mountain, Duc Trong, Lam Dong",
+                nav_reviews: "Reviews",
+                btn_book: "Book Tour",
+                hero_badge: "At the foot of majestic Elephant Mountain, Duc Trong, Lam Dong",
                 hero_title_1: "Discover the Beauty of",
                 hero_title_2: "Darahoa Chicken Village",
                 hero_desc: "Home to the giant 9-spurred chicken statue, deeply infused with the cultural identity of the K'Ho ethnic minority.",
-                hero_btn_1: "Read Legend",
+                hero_btn_1: "Explore Mountain Tours",
                 hero_btn_2: "View Gallery",
                 story_tag: "Epic Story",
                 story_title: "The Legend of the 9-Spurred Chicken",
-                story_desc: "The village's name is tied to a touching love story between H'Bia and K'Tien. Due to strict marriage demands, the couple merged into the mountains. The towering statue of the 9-spurred rooster stands as a symbol of loyalty and freedom.",
+                story_desc: "The village's name is tied to a touching love story between H'Bia and K'Tien.",
                 feat_1_title: "9-Spurred Chicken Statue",
-                feat_1_desc: "An iconic 3.2m tall, 8-ton monument built in 1978, leaving a deep impression on every visitor.",
+                feat_1_desc: "An iconic 3.2m tall, 8-ton monument built in 1978.",
                 feat_2_title: "Brocade Weaving",
-                feat_2_desc: "Experience traditional manual looms and witness the exquisite craftsmanship of K'Ho women.",
+                feat_2_desc: "Experience traditional manual looms of K'Ho women.",
                 feat_3_title: "Gong Culture",
-                feat_3_desc: "Immerse yourself in community gatherings and enjoy traditional local wine amidst nature.",
+                feat_3_desc: "Immerse in community gatherings and enjoy local wine.",
+                tour_tag: "🥾 Trekking & Nature",
+                tour_title: "Elephant Mountain Trekking & Chicken Village Tours",
+                tour_subtitle: "Complete trekking guides to conquer the 1,756m peak starting from Darahoa.",
+                art_1_title: "Conquer Elephant Mountain Peak From Chicken Village",
+                art_1_excerpt: "Trek through century-old pine forests and enjoy panoramic views of Tuyen Lam Lake...",
+                art_2_title: "Chicken Village – Elephant Rock & Mystic Moss Forest Tour",
+                art_2_excerpt: "A blend of K'Ho culture and light trekking to giant elephant-shaped boulders...",
+                art_3_title: "Elephant Mountain Trekking Tips & K'Ho Indigenous Cuisine",
+                art_3_excerpt: "What to pack, cloud-hunting seasons, and enjoying bamboo rice with locals...",
+                btn_read_more: "Read full article →",
+                blog_tag: "📖 Travel Guides",
+                blog_title: "Chicken Village Reference Articles",
+                blog_sub: "Useful information to make your trip to Darahoa complete.",
+                ref_1_title: "Directions to Darahoa Chicken Village From Dalat & Lien Khuong Airport",
+                ref_1_desc: "Just 10km from Lien Khuong Airport and 20km from Dalat along Highway 20...",
+                ref_2_title: "Matriarchy & Brocade Weaving Art of K'Ho Chil",
+                ref_2_desc: "Learn about unique customs, brocade patterns, and mountain life...",
+                ref_3_title: "1-Day Itinerary to Explore Duc Trong – South Dalat",
+                ref_3_desc: "Combine Chicken Village, Cau Dat Tea Hill, and Pongour Waterfall in one day...",
+                cta_tag: "Safe & Authentic",
+                cta_title: "Join Elephant Mountain Trekking With Local K'Ho Guides?",
+                cta_desc: "Connect directly with local guides in Darahoa for safe trails and mountain cuisine.",
+                cta_btn_msg: "Book via Messenger",
+                cta_btn_fb: "View Schedule on Facebook",
                 lib_tag: "Media Library",
                 lib_title: "Darahoa Through Video & Photos",
                 vid_1_title: "Explore Darahoa Village",
@@ -357,74 +669,122 @@
                 footer_map_title: "Google Map"
             },
             fr: {
-                meta_title: "Découvrez le Village du Poulet - Beauté de la Montagne de l'Éléphant",
+                meta_title: "Découvrez le Village du Poulet & Randonnée",
                 nav_sub: "Tourisme Culturel K'Ho",
-                nav_about: "À propos",
                 nav_legend: "Légende",
                 nav_exp: "Expériences",
+                nav_tour: "Randonnée",
+                nav_blog: "Guides",
                 nav_lib: "Galerie",
-                nav_reviews: "Avis Réels",
-                nav_contact: "Contact",
-                btn_book: "Explorer",
-                hero_badge: "⛰️ Au pied de la majestueuse Montagne de l'Éléphant, Lâm Đồng",
+                nav_reviews: "Avis",
+                btn_book: "Réserver",
+                hero_badge: "Au pied de la majestueuse Montagne de l'Éléphant, Lâm Đồng",
                 hero_title_1: "Découvrez le Village de",
                 hero_title_2: "Darahoa",
-                hero_desc: "Abritant la statue géante du coq à 9 éperons, profondément imprégnée de l'identité culturelle de l'ethnie K'Ho.",
-                hero_btn_1: "Lire la Légende",
+                hero_desc: "Abritant la statue géante du coq à 9 éperons.",
+                hero_btn_1: "Tours Montagne",
                 hero_btn_2: "Voir la Galerie",
                 story_tag: "Histoire Épique",
                 story_title: "La Légende du Coq à 9 Éperons",
-                story_desc: "Le nom du village est lié à une histoire d'amour touchante entre H'Bia et K'Tien. La statue imposante du coq se dresse comme un symbole de fidélité et de liberté.",
+                story_desc: "Le nom du village est lié à une histoire d'amour touchante.",
                 feat_1_title: "Statue du Coq à 9 Éperons",
-                feat_1_desc: "Monument emblématique de 3,2 m de haut et de 8 tonnes construit en 1978.",
+                feat_1_desc: "Monument emblématique de 3,2 m de haut.",
                 feat_2_title: "Tissage de Brocart",
-                feat_2_desc: "Découvrez les métiers à tisser traditionnels et le savoir-faire des femmes K'Ho.",
+                feat_2_desc: "Découvrez les métiers à tisser traditionnels.",
                 feat_3_title: "Culture des Gongs",
-                feat_3_desc: "Plongez dans les rassemblements communautaires et dégustez le vin local.",
+                feat_3_desc: "Plongez dans les rassemblements communautaires.",
+                tour_tag: "🥾 Trekking & Nature",
+                tour_title: "Randonnée Montagne de l'Éléphant & Village",
+                tour_subtitle: "Guides complets de trekking pour le sommet.",
+                art_1_title: "Conquérir la Montagne de l'Éléphant",
+                art_1_excerpt: "Partez de la statue du coq à travers des forêts de pins...",
+                art_2_title: "Tour Village – Rocher de l'Éléphant",
+                art_2_excerpt: "Mélange entre culture K'Ho et randonnée douce...",
+                art_3_title: "Conseils de Trekking & Gastronomie",
+                art_3_excerpt: "Que préparer et meilleures saisons...",
+                btn_read_more: "Lire l'article →",
+                blog_tag: "📖 Guides de Voyage",
+                blog_title: "Articles de Référence",
+                blog_sub: "Informations utiles pour votre voyage.",
+                ref_1_title: "Itinéraire vers le Village",
+                ref_1_desc: "À 10 km de l'aéroport de Lien Khuong...",
+                ref_2_title: "Matriarcat & Tissage de Brocart",
+                ref_2_desc: "Découvrez les coutumes uniques...",
+                ref_3_title: "Itinéraire d'1 Jour à Duc Trong",
+                ref_3_desc: "Combinez le Village du Poulet, les collines de thé...",
+                cta_tag: "Expérience Authentique",
+                cta_title: "Rejoignez une Randonnée Avec des Guides Locaux?",
+                cta_desc: "Contactez directement les guides locaux.",
+                cta_btn_msg: "Réserver sur Messenger",
+                cta_btn_fb: "Voir sur Facebook",
                 lib_tag: "Médiathèque",
                 lib_title: "Darahoa en Vidéo & Photos",
-                vid_1_title: "Explorer le Village Darahoa",
+                vid_1_title: "Explorer le Village",
                 vid_2_title: "Expériences Culturelles",
                 img_1_title: "Statue Géante",
                 img_1_desc: "Symbole fier du peuple K'Ho",
                 img_2_title: "Mode de Vie Local",
-                img_2_desc: "Maisons rustiques et mode de vie traditionnel",
+                img_2_desc: "Maisons rustiques et mode de vie",
                 img_3_title: "Paysage Naturel",
                 img_3_desc: "Scène verdoyante au pied de la montagne",
                 rev_tag: "Avis Google Maps",
-                rev_title: "Expériences Réelles des Voyageurs",
-                rev_desc: "Avis en temps réel synchronisés directement depuis Google Maps.",
+                rev_title: "Expériences Réelles",
+                rev_desc: "Avis en temps réel synchronisés depuis Google Maps.",
                 rev_btn: "Voir sur Google Maps",
                 footer_title: "Village du Poulet Darahoa",
-                footer_address: "📍 Adresse : Hameau Darahoa, Commune Hiep Thanh, District Duc Trong, Lam Dong.",
+                footer_address: "📍 Adresse : Hameau Darahoa, Lam Dong.",
                 footer_links_title: "Liens Rapides",
                 footer_map_title: "Carte Google"
             },
             ja: {
-                meta_title: "チキンビレッジ（鶏の村）ダラホアの魅力",
+                meta_title: "ダラホア・チキンビレッジ＆象山トレッキングツアー",
                 nav_sub: "K'Ho文化観光",
-                nav_about: "紹介",
                 nav_legend: "伝説",
                 nav_exp: "体験",
+                nav_tour: "象山ツアー",
+                nav_blog: "ガイド",
                 nav_lib: "ギャラリー",
-                nav_reviews: "実際のレビュー",
-                nav_contact: "連絡先",
-                btn_book: "今すぐ探索",
-                hero_badge: "⛰️ 雄大な象山のふもと、ラムドン省ドゥックチョン",
+                nav_reviews: "レビュー",
+                btn_book: "ツアー予約",
+                hero_badge: "雄大な象山のふもと、ラムドン省ドゥックチョン",
                 hero_title_1: "魅力を発見：",
                 hero_title_2: "ダラホア・チキンビレッジ",
-                hero_desc: "K'Ho族の文化的アイデンティティが息づく、巨大な9本爪の鶏の像がある場所。",
-                hero_btn_1: "伝説を読む",
+                hero_desc: "K'Ho族の文化的アイデンティティが息づく村。",
+                hero_btn_1: "象山ツアーを見る",
                 hero_btn_2: "ギャラリーを見る",
                 story_tag: "叙事詩の物語",
                 story_title: "9本爪の鶏の伝説",
-                story_desc: "村の名前は、H'BiaとK'Tienの感動的な愛の物語に由来しています。",
+                story_desc: "村の名前は感動的な愛の物語に由来しています。",
                 feat_1_title: "9本爪の鶏の像",
-                feat_1_desc: "1978年に建てられた高さ3.2m、重さ8トンの象徴的なモニュメント。",
+                feat_1_desc: "1978年に建てられた象徴的なモニュメント。",
                 feat_2_title: "伝統織物",
-                feat_2_desc: "伝統的な手織り機と、K'Hoの女性たちの卓越した技術を間近で体験。",
+                feat_2_desc: "K'Hoの女性たちの手織り機を体験。",
                 feat_3_title: "ゴング文化",
-                feat_3_desc: "豊かな自然の中で、地域社会の温かい文化や地酒を楽しむ。",
+                feat_3_desc: "豊かな自然の中で地酒を楽しむ。",
+                tour_tag: "🥾 トレッキング",
+                tour_title: "象山登山＆チキンビレッジツアー",
+                tour_subtitle: "標高1,756mの象山山頂を目指すトレッキング。",
+                art_1_title: "チキンビレッジから象山山頂へ",
+                art_1_excerpt: "松林を抜けてトゥエンラム湖の絶景を望む...",
+                art_2_title: "象岩＆神秘の苔の森ツアー",
+                art_2_excerpt: "K'Ho族の文化と象の形の岩を巡るハイキング...",
+                art_3_title: "象山登山の準備ガイド",
+                art_3_excerpt: "持ち物や雲海のベストシーズンについて...",
+                btn_read_more: "記事を読む →",
+                blog_tag: "📖 観光ガイド",
+                blog_title: "チキンビレッジ参考記事",
+                blog_sub: "旅行に役立つ情報。",
+                ref_1_title: "ダラホア村へのアクセス",
+                ref_1_desc: "リエンクオン空港から10km...",
+                ref_2_title: "K'Ho族の母系制と織物アート",
+                ref_2_desc: "伝統的な風習と暮らしについて...",
+                ref_3_title: "ドゥックチョン1日観光モデルコース",
+                ref_3_desc: "チキンビレッジとポンガーの滝を巡る...",
+                cta_tag: "安全で本格的な体験",
+                cta_title: "現地ガイドと一緒に象山トレッキングに参加しませんか？",
+                cta_desc: "ダラホア村のガイドと直接つながりましょう。",
+                cta_btn_msg: "Messengerで予約",
+                cta_btn_fb: "Facebookで日程を見る",
                 lib_tag: "メディアライブラリー",
                 lib_title: "動画と写真で見るダラホア",
                 vid_1_title: "ダラホア村を探索",
@@ -440,35 +800,59 @@
                 rev_desc: "Googleマップから自動同期されたリアルタイムのレビュー。",
                 rev_btn: "Googleマップで詳細を見る",
                 footer_title: "ダラホア・チキンビレッジ観光地",
-                footer_address: "📍 住所：ラムドン省ドゥックチョン県ヒエプタイン村ダラホア",
+                footer_address: "📍 住所：ラムドン省ドゥックチョン県ヒエプタイン村",
                 footer_links_title: "クイックリンク",
                 footer_map_title: "Googleマップ"
             },
             ko: {
-                meta_title: "다라호아 닭 마을 탐방 - 코끼리산 기슭의 아름다움",
+                meta_title: "다라호아 닭 마을 & 코끼리산 트레킹 투어",
                 nav_sub: "K'Ho 문화 관광",
-                nav_about: "소개",
                 nav_legend: "전설",
                 nav_exp: "체험",
+                nav_tour: "코끼리산 투어",
+                nav_blog: "가이드",
                 nav_lib: "갤러리",
-                nav_reviews: "실제 리뷰",
-                nav_contact: "연락처",
-                btn_book: "탐험하기",
-                hero_badge: "⛰️ 웅장한 코끼리산 기슭, 람동성 득쫑",
+                nav_reviews: "리뷰",
+                btn_book: "투어 예약",
+                hero_badge: "웅장한 코끼리산 기슭, 람동성 득쫑",
                 hero_title_1: "아름다움을 발견하다",
                 hero_title_2: "다라호아 닭 마을",
-                hero_desc: "K'Ho 소수민족의 문화적 정체성이 담긴 거대한 9발톱 닭 동상이 있는 곳입니다.",
-                hero_btn_1: "전설 읽기",
+                hero_desc: "K'Ho 소수민족의 문화가 담긴 거대한 닭 동상이 있는 곳.",
+                hero_btn_1: "코끼리산 투어 보기",
                 hero_btn_2: "갤러리 보기",
                 story_tag: "서사시 이야기",
                 story_title: "9발톱 닭의 전설",
-                story_desc: "마을 이름은 H'Bia와 K'Tien의 감동적인 사랑 이야기와 연결되어 있습니다.",
+                story_desc: "마을 이름은 감동적인 사랑 이야기와 연결되어 있습니다.",
                 feat_1_title: "9발톱 닭 동상",
-                feat_1_desc: "1978년에 건립된 높이 3.2m, 무게 8톤의 상징적인 기념물.",
+                feat_1_desc: "1978년에 건립된 상징적인 기념물.",
                 feat_2_title: "전통 직물 공예",
-                feat_2_desc: "전통 수동 직기로 K'Ho 여성들의 섬세한 솜씨를 직접 관찰해 보세요.",
+                feat_2_desc: "전통 직기로 K'Ho 여성들의 솜씨를 관찰.",
                 feat_3_title: "공(Gong) 문화",
-                feat_3_desc: "대자연 속에서 지역 사회의 따뜻한 문화와 전통주를 즐겨보세요.",
+                feat_3_desc: "대자연 속에서 지역 사회의 문화를 즐김.",
+                tour_tag: "🥾 트레킹 & 자연",
+                tour_title: "코끼리산 등반 & 닭 마을 투어",
+                tour_subtitle: "1,756m 정상을 정복하는 트레킹 가이드.",
+                art_1_title: "닭 마을에서 코끼리산 정상 정복",
+                art_1_excerpt: "소나무 숲을 지나 뚜옌람 호수의 전경을 감상...",
+                art_2_title: "코끼리 바위 & 신비로운 이끼 숲 투어",
+                art_2_excerpt: "K'Ho 전통 마을 문화와 거대한 바위 탐험...",
+                art_3_title: "코끼리산 등반 팁 & 로컬 푸드",
+                art_3_excerpt: "등반 준비물과 현지 음식 소개...",
+                btn_read_more: "자세히 보기 →",
+                blog_tag: "📖 여행 가이드",
+                blog_title: "닭 마을 참고 아티클",
+                blog_sub: "여행에 유용한 정보.",
+                ref_1_title: "다라호아 마을 오시는 길",
+                ref_1_desc: "리엔쿠엉 공항에서 10km 거리...",
+                ref_2_title: "K'Ho Chil의 모계 사회와 직물 공예",
+                ref_2_desc: "독특한 풍습과 전통에 대해...",
+                ref_3_title: "득쫑 1일 여행 코스 추천",
+                ref_3_desc: "닭 마을과 폭포를 하루에 둘러보기...",
+                cta_tag: "안전하고 특별한 로컬 경험",
+                cta_title: "현지 K'Ho 가이드와 함께 코끼리산 트레킹에 참여하시겠습니까?",
+                cta_desc: "다라호아 마을 가이드와 직접 연결하세요.",
+                cta_btn_msg: "Messenger로 예약",
+                cta_btn_fb: "Facebook에서 일정 보기",
                 lib_tag: "미디어 라이브러리",
                 lib_title: "사진과 영상으로 만나는 다라호아",
                 vid_1_title: "다라호아 마을 탐색",
@@ -484,35 +868,59 @@
                 rev_desc: "Google 지도에서 직접 실시간 동기화된 리뷰입니다.",
                 rev_btn: "Google 지도에서 자세히 보기",
                 footer_title: "다라호아 닭 마을 관광지",
-                footer_address: "📍 주소: 람동성 득쫑현 히엡타인 사 다라호아",
+                footer_address: "📍 주소: 람동성 득쫑현",
                 footer_links_title: "바로가기",
                 footer_map_title: "구글 지도"
             },
             zh: {
-                meta_title: "探索大象山下的达拉霍亚鸡村",
+                meta_title: "探索达拉霍亚鸡村与大象山徒步",
                 nav_sub: "K'Ho文化旅游",
-                nav_about: "关于我们",
                 nav_legend: "神话传说",
                 nav_exp: "特色体验",
+                nav_tour: "大象山徒步",
+                nav_blog: "旅游指南",
                 nav_lib: "照片库",
-                nav_reviews: "游客真实评价",
-                nav_contact: "联系方式",
-                btn_book: "立即探索",
-                hero_badge: "⛰️ 雄伟的大象山脚下，林同省德重县",
+                nav_reviews: "游客评价",
+                btn_book: "立即预约",
+                hero_badge: "雄伟的大象山脚下，林同省德重县",
                 hero_title_1: "探索美丽的",
                 hero_title_2: "达拉霍亚鸡村",
-                hero_desc: "这里保存着巨大的九趾鸡雕像，充满浓郁的K'Ho少数民族西原高原文化特色。",
-                hero_btn_1: "阅读传说",
+                hero_desc: "这里保存着巨大的九趾鸡雕像，充满浓郁的西原高原文化特色。",
+                hero_btn_1: "探索大象山徒步",
                 hero_btn_2: "查看相册",
                 story_tag: "史诗故事",
                 story_title: "九趾神鸡的传说",
-                story_desc: "村庄的名字源于H'Bia与K'Tien动人的爱情故事。",
+                story_desc: "村庄的名字源于动人的爱情故事。",
                 feat_1_title: "九趾鸡雕像",
-                feat_1_desc: "这座标志性建筑建于1978年，高3.2米，重8吨，给每位游客留下了深刻印象。",
+                feat_1_desc: "建于1978年的标志性建筑。",
                 feat_2_title: "传统织锦",
-                feat_2_desc: "体验传统手摇织布机，领略K'Ho族姑娘们的精湛手艺。",
+                feat_2_desc: "体验K'Ho族姑娘们的精湛手艺。",
                 feat_3_title: "锣钹文化",
-                feat_3_desc: "融入社区生活空间，在山林间品味温暖的传统佳酿。",
+                feat_3_desc: "在山林间品味温暖的传统佳酿。",
+                tour_tag: "🥾 徒步与自然",
+                tour_title: "大象山登山与鸡村之旅",
+                tour_subtitle: "从鸡村出发征服海拔1756米大象山顶的指南。",
+                art_1_title: "从鸡村出发征服大象山顶",
+                art_1_excerpt: "穿越百年松林，俯瞰泉林湖全景...",
+                art_2_title: "鸡村体验游 – 卧象巨石与苔藓森林",
+                art_2_excerpt: "结合传统村落文化与轻徒步...",
+                art_3_title: "大象山徒步攻略与特色美食",
+                art_3_excerpt: "行前准备、观云海季节与竹筒饭体验...",
+                btn_read_more: "阅读全文 →",
+                blog_tag: "📖 旅游指南",
+                blog_title: "鸡村参考文章",
+                blog_sub: "让您的旅程更加完美实用信息。",
+                ref_1_title: "到达拉霍亚鸡村的交通指南",
+                ref_1_desc: "距离联姜机场10公里，交通1便...",
+                ref_2_title: "K'Ho Chil族的母系制度与织锦艺术",
+                ref_2_desc: "了解独特的习俗与山林生活...",
+                ref_3_title: "德重一日游推荐行程",
+                ref_3_desc: "串联鸡村、茶山与瀑布的最佳路线...",
+                cta_tag: "安全纯正的本地体验",
+                cta_title: "想与当地K'Ho向导一起参加大象山徒步吗？",
+                cta_desc: "直接联系达拉霍亚村的向导团队。",
+                cta_btn_msg: "通过Messenger预约",
+                cta_btn_fb: "在Facebook查看行程",
                 lib_tag: "多媒体库",
                 lib_title: "通过视频与照片感受鸡村风光",
                 vid_1_title: "探索达拉霍亚鸡村",
@@ -525,10 +933,10 @@
                 img_3_desc: "大象山下苍翠清幽的自然空间",
                 rev_tag: "Google Maps 评价",
                 rev_title: "来自旅行者的真实反馈",
-                rev_desc: "直接从Google Maps实时同步的游客真实体验。",
+                rev_desc: "直接从Google Maps实时同步。",
                 rev_btn: "在Google Maps上查看详情",
                 footer_title: "达拉霍亚鸡村旅游区",
-                footer_address: "📍 地址：林同省德重县协盛社达拉霍亚村",
+                footer_address: "📍 地址：林同省德重县",
                 footer_links_title: "快速导航",
                 footer_map_title: "地图导航"
             }
