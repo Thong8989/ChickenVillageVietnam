@@ -33,7 +33,7 @@
 </head>
 <body class="bg-stone-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
 
-    <!-- Header / Navbar Phong Cách Du Lịch Hiện Đại -->
+    <!-- Header / Navbar -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-stone-200/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
@@ -56,7 +56,7 @@
             </nav>
 
             <div class="flex items-center gap-3">
-                <!-- Dropdown Chọn Ngôn Ngữ Đa Quốc Gia -->
+                <!-- Dropdown Đa Ngôn Ngữ -->
                 <div class="relative">
                     <select id="langSelector" onchange="changeLanguage(this.value)" class="appearance-none bg-stone-100 hover:bg-stone-200 text-slate-700 font-semibold px-4 py-2 pr-8 rounded-full text-xs transition border border-stone-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-500">
                         <option value="vi">🇻🇳 Tiếng Việt</option>
@@ -66,9 +66,7 @@
                         <option value="ko">🇰🇷 한국어</option>
                         <option value="zh">🇨🇳 中文</option>
                     </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500 text-xs">
-                        ▼
-                    </div>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500 text-xs">▼</div>
                 </div>
 
                 <a href="#lien-he" class="hidden sm:inline-block bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs px-5 py-2.5 rounded-full shadow-lg shadow-amber-600/20 transition-all transform hover:-translate-y-0.5" data-i18n="btn_book">
@@ -78,7 +76,7 @@
         </div>
     </header>
 
-    <!-- Hero Section Đậm Chất Travel Platform -->
+    <!-- Hero Section -->
     <section class="relative min-h-[92vh] flex items-center justify-center bg-cover bg-center pt-20" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75)), url('images/banner.jpg');">
         <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
             <div class="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white/15 backdrop-blur-md text-xs sm:text-sm font-medium mb-6 border border-white/20 shadow-xl">
@@ -130,7 +128,7 @@
         </div>
     </section>
 
-    <!-- Thư Viện Ảnh & Video -->
+    <!-- Thư Viện Ảnh & 2 Video YouTube -->
     <section id="thu-vien" class="py-20 bg-stone-100/80 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -138,15 +136,25 @@
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900" data-i18n="lib_title">Không gian Làng Gà qua Video & Ảnh</h2>
             </div>
 
-            <!-- YouTube Video Grid -->
-            <div class="bg-white p-4 sm:p-8 rounded-3xl shadow-lg border border-stone-200/60 mb-12">
-                <div class="max-w-3xl mx-auto text-center mb-6">
-                    <h3 class="text-2xl font-bold text-slate-900 mb-2" data-i18n="vid_title">Khám phá Làng Gà Darahoa trên YouTube</h3>
-                    <p class="text-slate-600 text-sm font-light" data-i18n="vid_desc">Video thực tế ghi lại cảnh sắc và đời sống văn hóa tại làng.</p>
+            <!-- LƯỚI 2 VIDEO YOUTUBE ĐẶT CẠNH NHAU -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                
+                <!-- Video 1 -->
+                <div class="bg-white p-6 rounded-3xl shadow-lg border border-stone-200/60 flex flex-col">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3" data-i18n="vid_1_title">Khám phá Làng Gà Darahoa</h3>
+                    <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md bg-slate-900">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/7Vf5C9ixskU" title="YouTube video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
                 </div>
-                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-slate-900">
-                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/7Vf5C9ixskU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                <!-- Video 2 (Đã cập nhật ID 81p7I6Ka0Z0) -->
+                <div class="bg-white p-6 rounded-3xl shadow-lg border border-stone-200/60 flex flex-col">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3" data-i18n="vid_2_title">Trải nghiệm Văn Hóa & Du Lịch</h3>
+                    <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md bg-slate-900">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/81p7I6Ka0Z0" title="YouTube video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
                 </div>
+
             </div>
 
             <!-- Image Grid -->
@@ -204,7 +212,7 @@
         </div>
     </section>
 
-    <!-- Footer & Contact Modern Style -->
+    <!-- Footer & Contact -->
     <footer id="lien-he" class="bg-slate-900 text-stone-300 pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
             <div>
@@ -253,11 +261,11 @@
         </div>
 
         <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 text-center text-xs text-stone-500">
-            &copy; 2026 Làng Con Gà . KJY Vận hành thiết kế quảng bá du lịch địa phương.
+            &copy; 2026 Làng Gà Darahoa. Thiết kế quảng bá du lịch địa phương.
         </div>
     </footer>
 
-    <!-- Script Đa Ngôn Ngữ (Việt, Anh, Pháp, Nhật, Hàn, Trung) -->
+    <!-- Script Đa Ngôn Ngữ -->
     <script>
         const translations = {
             vi: {
@@ -287,8 +295,8 @@
                 feat_3_desc: "Hòa mình vào không gian sinh hoạt cộng đồng, thưởng thức hương vị rượu cần nồng ấm giữa núi rừng.",
                 lib_tag: "Thư Viện Đa Phương Tiện",
                 lib_title: "Không gian Làng Gà qua Video & Ảnh",
-                vid_title: "Khám phá Làng Gà Darahoa trên YouTube",
-                vid_desc: "Video thực tế ghi lại cảnh sắc và đời sống văn hóa tại làng.",
+                vid_1_title: "Khám phá Làng Gà Darahoa",
+                vid_2_title: "Trải nghiệm Văn Hóa & Du Lịch",
                 img_1_title: "Tượng Gà Khổng Lồ",
                 img_1_desc: "Biểu tượng tự hào của đồng bào K'Ho",
                 img_2_title: "Đời Sống Bản Địa",
@@ -331,8 +339,8 @@
                 feat_3_desc: "Immerse yourself in community gatherings and enjoy traditional local wine amidst nature.",
                 lib_tag: "Media Library",
                 lib_title: "Darahoa Through Video & Photos",
-                vid_title: "Explore Darahoa Village on YouTube",
-                vid_desc: "Actual footage capturing the landscape and cultural life of the village.",
+                vid_1_title: "Explore Darahoa Village",
+                vid_2_title: "Cultural & Travel Experiences",
                 img_1_title: "Giant Chicken Statue",
                 img_1_desc: "Proud symbol of the K'Ho people",
                 img_2_title: "Local Lifestyle",
@@ -372,11 +380,11 @@
                 feat_2_title: "Tissage de Brocart",
                 feat_2_desc: "Découvrez les métiers à tisser traditionnels et le savoir-faire des femmes K'Ho.",
                 feat_3_title: "Culture des Gongs",
-                feat_3_desc: "Plongez dans les rassemblements communautaires et dégustez le vin de.___",
+                feat_3_desc: "Plongez dans les rassemblements communautaires et dégustez le vin local.",
                 lib_tag: "Médiathèque",
                 lib_title: "Darahoa en Vidéo & Photos",
-                vid_title: "Explorer le Village sur YouTube",
-                vid_desc: "Images réelles capturant la vie culturelle du village.",
+                vid_1_title: "Explorer le Village Darahoa",
+                vid_2_title: "Expériences Culturelles",
                 img_1_title: "Statue Géante",
                 img_1_desc: "Symbole fier du peuple K'Ho",
                 img_2_title: "Mode de Vie Local",
@@ -393,7 +401,7 @@
                 footer_map_title: "Carte Google"
             },
             ja: {
-                meta_title: "チキンビレッジ（鶏の村）ダラホアの魅力 - エレファントマウンテンのふもと",
+                meta_title: "チキンビレッジ（鶏の村）ダラホアの魅力",
                 nav_sub: "K'Ho文化観光",
                 nav_about: "紹介",
                 nav_legend: "伝説",
@@ -410,17 +418,17 @@
                 hero_btn_2: "ギャラリーを見る",
                 story_tag: "叙事詩の物語",
                 story_title: "9本爪の鶏の伝説",
-                story_desc: "村の名前は、H'BiaとK'Tienの感動的な愛の物語に由来しています。村の中心にある巨大な鶏の像は、忠誠と自由の象徴です。",
+                story_desc: "村の名前は、H'BiaとK'Tienの感動的な愛の物語に由来しています。",
                 feat_1_title: "9本爪の鶏の像",
                 feat_1_desc: "1978年に建てられた高さ3.2m、重さ8トンの象徴的なモニュメント。",
-                feat_2_title: "伝統織物（ブロケード）",
+                feat_2_title: "伝統織物",
                 feat_2_desc: "伝統的な手織り機と、K'Hoの女性たちの卓越した技術を間近で体験。",
                 feat_3_title: "ゴング文化",
                 feat_3_desc: "豊かな自然の中で、地域社会の温かい文化や地酒を楽しむ。",
                 lib_tag: "メディアライブラリー",
                 lib_title: "動画と写真で見るダラホア",
-                vid_title: "YouTubeで村を探索する",
-                vid_desc: "村の風景や文化を捉えた実際の映像。",
+                vid_1_title: "ダラホア村を探索",
+                vid_2_title: "文化と旅行の体験",
                 img_1_title: "巨大な鶏の像",
                 img_1_desc: "K'Ho族の誇り高きシンボル",
                 img_2_title: "ローカルな暮らし",
@@ -454,7 +462,7 @@
                 hero_btn_2: "갤러리 보기",
                 story_tag: "서사시 이야기",
                 story_title: "9발톱 닭의 전설",
-                story_desc: "마을 이름은 H'Bia와 K'Tien의 감동적인 사랑 이야기와 연결되어 있습니다. 마을의 거대한 닭 동상은 충성과 자유의 상징입니다.",
+                story_desc: "마을 이름은 H'Bia와 K'Tien의 감동적인 사랑 이야기와 연결되어 있습니다.",
                 feat_1_title: "9발톱 닭 동상",
                 feat_1_desc: "1978년에 건립된 높이 3.2m, 무게 8톤의 상징적인 기념물.",
                 feat_2_title: "전통 직물 공예",
@@ -463,8 +471,8 @@
                 feat_3_desc: "대자연 속에서 지역 사회의 따뜻한 문화와 전통주를 즐겨보세요.",
                 lib_tag: "미디어 라이브러리",
                 lib_title: "사진과 영상으로 만나는 다라호아",
-                vid_title: "유튜브에서 다라호아 마을 탐색",
-                vid_desc: "마을의 풍경과 문화적 삶을 담은 실제 영상.",
+                vid_1_title: "다라호아 마을 탐색",
+                vid_2_title: "문화 및 여행 체험",
                 img_1_title: "거대한 닭 동상",
                 img_1_desc: "K'Ho 사람들의 자랑스러운 상징",
                 img_2_title: "현지 라이프스타일",
@@ -498,7 +506,7 @@
                 hero_btn_2: "查看相册",
                 story_tag: "史诗故事",
                 story_title: "九趾神鸡的传说",
-                story_desc: "村庄的名字源于H'Bia与K'Tien动人的爱情故事。村中高耸的九趾公鸡雕像是忠贞与自由的象征。",
+                story_desc: "村庄的名字源于H'Bia与K'Tien动人的爱情故事。",
                 feat_1_title: "九趾鸡雕像",
                 feat_1_desc: "这座标志性建筑建于1978年，高3.2米，重8吨，给每位游客留下了深刻印象。",
                 feat_2_title: "传统织锦",
@@ -507,8 +515,8 @@
                 feat_3_desc: "融入社区生活空间，在山林间品味温暖的传统佳酿。",
                 lib_tag: "多媒体库",
                 lib_title: "通过视频与照片感受鸡村风光",
-                vid_title: "在YouTube上探索鸡村",
-                vid_desc: "记录村庄风光与文化生活的实地视频。",
+                vid_1_title: "探索达拉霍亚鸡村",
+                vid_2_title: "文化与旅游体验",
                 img_1_title: "巨型鸡雕像",
                 img_1_desc: "K'Ho族人民的骄傲象征",
                 img_2_title: "当地生活方式",
@@ -528,11 +536,7 @@
 
         function changeLanguage(lang) {
             document.documentElement.setAttribute('lang', lang);
-            
-            // Cập nhật thẻ Title
             document.title = translations[lang].meta_title;
-
-            // Cập nhật tất cả các phần tử có thuộc tính data-i18n
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
